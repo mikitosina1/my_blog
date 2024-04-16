@@ -1,4 +1,4 @@
-<svg width="195.0" height="114.9" viewBox="0 0 1950 1149" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg class="logo" width="195.0" height="114.9" viewBox="0 0 1950 1149" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M516.5 1139.5V263.5H758.5V1139.5H516.5Z" fill="#D9D9D9" stroke="#D9D9D9"/>
     <path d="M759 263H516V1140H759V263Z" stroke="#C0C0C0" stroke-miterlimit="10"/>
     <path d="M1076.1 770.5H837.674L516.908 263.5H758.221L1076.1 770.5Z" fill="#D9D9D9" stroke="#D9D9D9"/>

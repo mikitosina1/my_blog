@@ -767,3 +767,8 @@ img, video {
         padding: 2rem
     }
 }
+
+
+svg.logo {
+    width: 4em;
+}
