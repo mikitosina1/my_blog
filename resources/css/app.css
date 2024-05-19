@@ -43,7 +43,36 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: inherit
 }
 
-a {
+.language_list{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    right: 5em;
+    top: 5em;
+}
+
+.language_list > a {
+    padding: .5em;
+}
+
+svg.language {
+    display: block;
+    position: fixed;
+    right: 2em;
+    top: 5.5em;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+svg.close {
+    display: none;
+    position: fixed;
+    right: 2em;
+    top: 5.5em;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+  a {
     color: inherit;
     text-decoration: inherit
 }
@@ -767,7 +796,6 @@ img, video {
         padding: 2rem
     }
 }
-
 
 svg.logo {
     width: 4em;
