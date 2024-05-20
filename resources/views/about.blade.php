@@ -1,6 +1,6 @@
 @vite(['resources/js/app.js','resources/css/about.css','resources/css/app.css'])
 <x-app-layout>
-    <div class="content-block p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+    <div class="content-block p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg mt-8">
         <div class="pimcore certificates">
             <div><img src="https://pimcore.com/academy/certificate-validation/badge/18PB765KY2E9XVN" style="max-width: 5em; max-height: 5em;" alt="pimcore junior badge"></div>
             <div><img src="https://pimcore.com/academy/certificate-validation/badge/7Y9WXEG1QCBTA8V" style="max-width: 5em; max-height: 5em;" alt="pimcore senior badge"></div>
