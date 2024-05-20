@@ -29,10 +29,8 @@
 
             <!-- Page Content -->
             <main>
-                <x-auth-main-plank class="">
-                </x-auth-main-plank>
-                <x-language class="">
-                </x-language>
+                <x-auth-main-plank></x-auth-main-plank>
+                <x-language></x-language>
                 {{ $slot }}
             </main>
         </div>

@@ -43,6 +43,35 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: inherit
 }
 
+nav {
+    display: inline-flex;
+    position: fixed;
+}
+
+main {
+    display: inline-flex;
+}
+
+div.left-nav {
+    height: 100vh;
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.settings {
+    display: flex;
+    margin-right: 1em;
+}
+
+div.logged-panel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .language_list{
     display: flex;
     position: fixed;
@@ -798,5 +827,5 @@ img, video {
 }
 
 svg.logo {
-    width: 4em;
+    width: 7em;
 }
