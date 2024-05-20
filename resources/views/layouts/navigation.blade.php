@@ -10,12 +10,17 @@
 
         <!-- Navigation Links -->
         @if (Auth::check())
-            <div class="hidden space-x-8 sm:-my-px sm:flex">
+            <div class="hidden space-x-8 sm:-my-px sm:flex nav-link-div">
                 <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                     @lang('dashboard.dashboard')
                 </x-nav-link>
             </div>
         @endif
+        <div class="nav-link-div">
+            <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                @lang('aside.about')
+            </x-nav-link>
+        </div>
     </div>
 
     <!-- Hamburger -->
@@ -41,12 +46,12 @@
             <div class="px-4">
                 <div class="font-medium text-base text-gray-800 dark:text-gray-200">
                     @if (Auth::check())
-                        <div>{{ Auth::user()->name }}</div>
+                        <div>{{ Auth::user()->name ?? ''}}</div>
                     @endif
                 </div>
                 <div class="font-medium text-sm text-gray-500">
                     @if (Auth::check())
-                        {{ Auth::user()->email }}
+                        {{ Auth::user()->email ?? ''}}
                     @endif
                 </div>
             </div>

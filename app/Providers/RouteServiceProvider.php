@@ -27,6 +27,13 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/';
 
     /**
+     * The path to application's "about" route.
+     *
+     * @var string
+     */
+    public const ABOUT = '/about';
+
+    /**
      * Define your route model bindings, pattern filters, and other route configuration.
      */
     public function boot(): void

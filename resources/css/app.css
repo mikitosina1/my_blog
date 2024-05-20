@@ -50,6 +50,8 @@ nav {
 
 main {
     display: inline-flex;
+    width: 99vw;
+    justify-content: center;
 }
 
 div.left-nav {
@@ -59,6 +61,12 @@ div.left-nav {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+}
+
+div.nav-link-div {
+    margin-top: .2em;
+    height: 2em;
+    font-size: 1em;
 }
 
 .settings {
