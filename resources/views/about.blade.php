@@ -32,11 +32,8 @@
         <div class="text">
             <h1 class="text-lg font-medium text-gray-900 dark:text-gray-100">@lang('about.hi') 🤓</h1>
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">@lang('about.iam')</p>
-            <hr>
-
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">📣 @lang('about.1')</p>
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">🛠️ @lang('about.0')</p>
-
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">📋 @lang('about.2')</p>
             <ul>
                 <li class="mt-1 text-sm text-gray-600 dark:text-gray-400">LAMP, LEMP, Linux (Debian & Ubuntu)</li>
@@ -45,12 +42,8 @@
                 <li class="mt-1 text-sm text-gray-600 dark:text-gray-400">HTML5, CSS3, Bootstrap, Sass/Less, XML, Bootstrap 5</li>
                 <li class="mt-1 text-sm text-gray-600 dark:text-gray-400">MSOffice, PhpStorm, Agile, OOP, MVC, Teamwork</li>
             </ul>
-            <hr>
-
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">📘 @lang('about.3')</p>
-
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">⌨️ @lang('about.4')</p>
-
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">🏅 @lang('about.5')</p>
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">🧸 @lang('about.6')</p>
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">📖 @lang('about.7')</p>

@@ -48,6 +48,12 @@ nav {
     position: fixed;
 }
 
+div.carpet {
+    background-color: #1e2937;
+    background-image: radial-gradient(silver .1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
 main {
     display: inline-flex;
     width: 99vw;
@@ -67,6 +73,11 @@ div.nav-link-div {
     margin-top: .2em;
     height: 2em;
     font-size: 1em;
+    text-decoration: none;
+}
+
+a.nav-link {
+    text-decoration: none;
 }
 
 .settings {

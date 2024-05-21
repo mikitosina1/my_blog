@@ -17,9 +17,13 @@
 .social {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    height: 3em;
     max-height: 3.5em;
     margin-bottom: .7em;
     margin-top: .7em;
+    border-radius: 10.25px;
+    background: linear-gradient(90deg, #1e2937 10%, #fff 100%, #ccc);
 }
 
 .social>* {

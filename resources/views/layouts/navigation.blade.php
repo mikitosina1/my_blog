@@ -9,13 +9,11 @@
         </div>
 
         <!-- Navigation Links -->
-        @if (Auth::check())
-            <div class="hidden space-x-8 sm:-my-px sm:flex nav-link-div">
-                <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                    @lang('dashboard.dashboard')
-                </x-nav-link>
-            </div>
-        @endif
+        <div class="hidden space-x-8 sm:-my-px sm:flex nav-link-div">
+            <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
+                @lang('aside.home')
+            </x-nav-link>
+        </div>
         <div class="nav-link-div">
             <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
                 @lang('aside.about')
