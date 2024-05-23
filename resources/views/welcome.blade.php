@@ -1,5 +1,8 @@
+@vite(['resources/css/app.css','resources/css/welcome.css'])
 <x-app-layout>
-    <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+    <div class="carpet">
+        <div class="content-block p-4 sm:p-8 dark:bg-gray-800 shadow sm:rounded-lg mt-8">
 
+        </div>
     </div>
 </x-app-layout>
