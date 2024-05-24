@@ -18,4 +18,3 @@ class LocalizationController extends Controller
         return redirect()->back();
     }
 }
-
