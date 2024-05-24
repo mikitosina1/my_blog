@@ -2,9 +2,12 @@
 
 namespace App\Services;
 
+use App\Models\PdfService;
+use Illuminate\Http\Request;
+
 class ExperiencePdfService extends PdfService
 {
-	public function generatePdf($data): string
+	public function generatePdf(Request $data): string
 	{
 		// Логика создания описания опыта работы с использованием TCPDF
 		$this->tcpdf->AddPage();

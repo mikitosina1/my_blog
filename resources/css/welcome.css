@@ -5,5 +5,20 @@
 }
 
 .content-block {
+    display: flex;
+}
 
+button.personalized {
+    height: 3em;
+    width: 10em;
+    max-height: 3.5em;
+    margin-bottom: .7em;
+    margin-top: .7em;
+    border-radius: 10px;
+    background: linear-gradient(225deg,#1e2937 -5%,#fff 85%,#ccc);
+}
+
+button.personalized:active {
+    background: linear-gradient(65deg,#1e2937 -5%,#fff 85%,#ccc);
+    transition: background-color 0.3s ease-in-out;
 }
