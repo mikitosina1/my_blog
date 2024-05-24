@@ -12,6 +12,7 @@ use TCPDF;
  */
 class PdfService
 {
+    /** @var TCPDF $tcpdf contain TCPDF class */
     protected TCPDF $tcpdf;
 
     public function __construct()
@@ -24,16 +25,16 @@ class PdfService
      * -----------------------------------------------------------------------------------------------------------------
      * Main function pdf generator
      *
-     * @param Request $data data from request
+     * @param Request $request
      * @return string
      */
-    public function generatePdf(Request $data): string
+    public function generatePdf(Request $request): string
     {
         $this->tcpdf->AddPage();
         $this->tcpdf->SetFont('times', 'I', 16);
-        $this->tcpdf->Cell(40, 10, 'Resume');
+        $this->tcpdf->Cell(40, 10, $request->get('type'));
 
-        return $this->tcpdf->Output('resume.pdf', 'I');
+        return $this->tcpdf->Output($request->get('type').'.pdf', 'I');
     }
 }
 

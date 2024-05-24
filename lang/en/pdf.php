@@ -1,6 +1,6 @@
 <?php
 
 return [
-	'get_test' => 'test pdf',
+    'get_test' => 'test pdf',
     'resume' => 'Resume',
 ];
