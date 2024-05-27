@@ -64,8 +64,6 @@ class ResumePdfService extends PdfService
     {
         $data = [
             'type' => mb_strtolower($request->get('type')),
-            'title' => $request->get('type'),
-            'content' => 'content',
             'title_name' => 'Test Titlename',
         ];
 
