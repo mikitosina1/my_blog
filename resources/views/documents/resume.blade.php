@@ -7,38 +7,30 @@
     <title>@lang('pdf.resume')</title>
 </head>
 <body>
-<div class="header" style="display: flex; justify-content: center;">
-    <div class="text" style="text-align: center;">
-        <h2>@lang('pdf.resume')</h2>
-        <h3>Test Name</h3>
-    </div>
-    <div class="photo">
-        <img src="/var/www/html/public/storage/profile_photos/test.jpg" alt="img">
-    </div>
-</div>
-<div>
-    <div class="main left">
-        <h3>Top 10 Skills</h3>
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
-        <p>5</p>
-        <p>6</p>
-        <p>7</p>
-        <p>8</p>
-        <p>9</p>
-        <p>10</p>
-    </div>
-    <div class="main right">
-        <div class="connection">
-            <label for="country"></label><p id="country"></p>
-            <label for="city"></label><p id="city"></p>
-            <label for="plz"></label><p id="plz"></p>
-            <label for="phone"></label><p id="plz"></p>
-        </div>
-    </div>
-</div>
-<div></div>
+<table style="border-collapse: collapse;" cellspacing="6">
+    <tr>
+        <td align="C">
+            <h2>@lang('pdf.resume')</h2>
+            <h1>Test Name</h1>
+        </td>
+        <td align="C">
+            <img src="/var/www/html/public/storage/profile_photos/test.jpg" alt="photo" border="0" width="250" align="middle">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>phone:</p>
+            <p>e-mail:</p>
+            <p>resource1:</p>
+            <p>resource2:</p>
+        </td>
+        <td>
+            <p>Land:</p>
+            <p>City:</p>
+            <p>Address:</p>
+            <p>PLZ:</p>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
