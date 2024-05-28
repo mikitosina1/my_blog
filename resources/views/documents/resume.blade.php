@@ -16,7 +16,29 @@
         <img src="/var/www/html/public/storage/profile_photos/test.jpg" alt="img">
     </div>
 </div>
-<div></div>
+<div>
+    <div class="main left">
+        <h3>Top 10 Skills</h3>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+        <p>9</p>
+        <p>10</p>
+    </div>
+    <div class="main right">
+        <div class="connection">
+            <label for="country"></label><p id="country"></p>
+            <label for="city"></label><p id="city"></p>
+            <label for="plz"></label><p id="plz"></p>
+            <label for="phone"></label><p id="plz"></p>
+        </div>
+    </div>
+</div>
 <div></div>
 </body>
 </html>
