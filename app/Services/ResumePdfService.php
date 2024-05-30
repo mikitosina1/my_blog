@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\PdfService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 
 
@@ -14,6 +15,8 @@ use Illuminate\Support\Facades\View;
  */
 class ResumePdfService extends PdfService
 {
+    /** @var string store route to temp folder */
+    private string $tempFile = '';
     /**
      * @param Request $request
      * @return string
@@ -26,6 +29,9 @@ class ResumePdfService extends PdfService
         $html = $this->generateHtml($request);
 
         $this->tcpdf->writeHTML($html, true, false, true);
+
+        if ($this->tempFile)
+            Storage::delete($this->tempFile);
 
         return $this->tcpdf->Output(mb_strtolower($request->get('type')).'.pdf'); //I to F
     }
@@ -65,9 +71,37 @@ class ResumePdfService extends PdfService
     {
         $data = [
             'type' => mb_strtolower($request->get('type')),
-            'title_name' => 'Test Titlename',
+            'name' => $request->get('resources'),
+            'photo' => $this->getPhotoPath($request),
+            'resources' => $request->get('resources'),
+            'phone' => $request->get('phone'),
+            'email' => $request->get('email'),
+            'country' => $request->get('country'),
+            'city' => $request->get('city'),
+            'address' => $request->get('address'),
+            'zip' => $request->get('zip'),
         ];
 
         return View::make('documents.'.mb_strtolower($request->get('type')), $data)->render();
+    }
+
+    /**
+     * getPhotoPath
+     * -----------------------------------------------------------------------------------------------------------------
+     * save photo and returns url to this photo
+     *
+     * @param Request $request
+     * @return string
+     */
+    public function getPhotoPath(Request $request): string
+    {
+        if ($request->hasFile('profile_photo')) {
+            $folder = 'public/temp/';
+            Storage::makeDirectory($folder);
+            $this->tempFile = $request->file('profile_photo')->store($folder);
+            return Storage::url($this->tempFile);
+        } else {
+            return '';
+        }
     }
 }

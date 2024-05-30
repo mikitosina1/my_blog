@@ -12,6 +12,7 @@ export default defineConfig({
 
                 // js
                 'resources/js/app.js',
+                'resources/js/welcome.js'
             ],
             refresh: true,
         }),

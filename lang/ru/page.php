@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'get_test' => 'Тестовый пдф',
     'resume' => 'Резюме',
+    'name_and_lastname' => 'Фамилия и Имя',
     'resume_photo' => 'Фото',
     'phone' => 'Телефон',
     'email' => 'Эл.Почта',

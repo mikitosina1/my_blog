@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'get_test' => 'test pdf',
     'resume' => 'Lebenslauf',
     'resume_photo' => 'Photo',
+    'name_and_lastname' => 'Nachname und Vorname',
     'phone' => 'Telefon',
     'email' => 'E-mail',
     'country' => 'Land',
