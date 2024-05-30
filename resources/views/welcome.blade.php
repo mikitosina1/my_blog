@@ -36,12 +36,6 @@
                     </button>
                 </div>
 
-                <div class="form-group row mb-0">
-                    <button type="submit" class="text-gray-800 personalized">
-                        >> @lang('page.resume')
-                    </button>
-                </div>
-
                 <!-- Photo -->
                 <div class="mt-4">
                     <x-input-label for="profile_photo" :value="__('page.resume_photo')" />
