@@ -17,6 +17,7 @@ class ResumePdfService extends PdfService
 {
     /** @var string store route to temp folder */
     private string $tempFile = '';
+
     /**
      * @param Request $request
      * @return string
@@ -35,7 +36,6 @@ class ResumePdfService extends PdfService
 
         return $this->tcpdf->Output(mb_strtolower($request->get('type')).'.pdf'); //I to F
     }
-
 
     /**
      * Fonts:
@@ -73,7 +73,7 @@ class ResumePdfService extends PdfService
             'type' => mb_strtolower($request->get('type')),
             'name' => $request->get('resources'),
             'photo' => $this->getPhotoPath($request),
-            'resources' => $request->get('resources'),
+            'additional' => $this->getAdditionalData($request->get('additional')),
             'phone' => $request->get('phone'),
             'email' => $request->get('email'),
             'country' => $request->get('country'),
@@ -103,5 +103,25 @@ class ResumePdfService extends PdfService
         } else {
             return '';
         }
+    }
+
+    /**
+     * getAdditionalData
+     * -----------------------------------------------------------------------------------------------------------------
+     * return to template additional data if it exists
+     *
+     * @param array $additional fields for additional connections name: data
+     * @return array
+     */
+    private function getAdditionalData(array $additional = []): array
+    {
+        $additional_fields = [];
+        if ($additional) {
+            foreach ($additional as $addValue) {
+                list($key, $value) = explode(':', $addValue, 2);
+                $additional_fields[$key] = $value;
+            }
+        }
+        return $additional_fields;
     }
 }

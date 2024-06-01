@@ -11,7 +11,7 @@
         <tr>
             <td align="C">
                 <p style="font-size: 24px;">@lang('pdf.resume')</p>
-                <p style="font-size: 24px;">{{ $resources }}</p>
+                <p style="font-size: 24px;">{{ $name }}</p>
             </td>
             <td align="C">
                 <img src="{{ $photo ?? '' }}" alt="@lang('resume_photo')" border="0" height="250" align="middle">
@@ -21,9 +21,9 @@
             <td>
                 <p>@lang('pdf.phone'): {{ $phone ?? '' }}</p>
                 <p>@lang('pdf.email'): {{ $email ?? '' }}</p>
-                @if($resources)
-                    @foreach($resources as $resource)
-                        <label for="{{ $resource['name'] }}"></label><p id="{{ $resource['name'] }}">{{ $resource['data'] }}</p>
+                @if($additional)
+                    @foreach($additional as $key => $resource)
+                        <p>{{ $key }}: {{ $resource }}</p>
                     @endforeach
                 @endif
             </td>
