@@ -9,9 +9,11 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/css/about.css',
                 'resources/css/welcome.css',
+                'resources/css/resume.css',
 
                 // js
-                'resources/js/app.js'
+                'resources/js/app.js',
+                'resources/js/pages/resume.js'
             ],
             refresh: true,
         }),
