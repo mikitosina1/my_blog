@@ -9,7 +9,7 @@
         </div>
 
         <!-- Navigation Links -->
-        <div class="hidden space-x-8 sm:-my-px sm:flex nav-link-div">
+        <div class="space-x-8 sm:-my-px sm:flex nav-link-div">
             <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
                 @lang('aside.home')
             </x-nav-link>

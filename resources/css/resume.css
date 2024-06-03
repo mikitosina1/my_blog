@@ -111,3 +111,15 @@ button.print {
 a.add_field {
     cursor: default;
 }
+
+.hidden {
+    display: none;
+}
+
+.alert {
+    padding: 15px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}

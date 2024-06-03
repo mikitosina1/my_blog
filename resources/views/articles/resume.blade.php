@@ -35,8 +35,8 @@
                     <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
                 </div>
 
-                <!-- Additional field 1 -->
-                <div class="mt-4 step_1">
+                <!-- Additional field -->
+                <div class="mt-4 step_1 additional">
                     <x-input-label for="additional0" :value="__('page.additional0')" />
                     <div class="row">
                         <x-text-input id="additional0" class="block mt-1 w-full" type="text" name="additional[0]" :value="old('additional0')" required autocomplete="additional0" />
@@ -44,27 +44,15 @@
                     </div>
                 </div>
 
-                <a class="text-gray-800 personalized step_1 add_field">
+                <!-- Add Additional field button -->
+                <a class="text-gray-800 personalized step_1 add_additional_field">
                     + @lang('page.add_field')
                 </a>
 
-                <!-- Additional field 2 -->
-{{--                <div class="mt-4 step_1">--}}
-{{--                    <x-input-label for="additional2" :value="__('page.additional2')" />--}}
-{{--                    <div class="row">--}}
-{{--                        <x-text-input id="additional2" class="block mt-1 w-full" type="text" name="additional[1]" :value="old('additional2')" autocomplete="additional2" />--}}
-{{--                        <x-note>@lang('page.additional_note')</x-note>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <!-- Additional field 3 -->--}}
-{{--                <div class="mt-4 step_1">--}}
-{{--                    <x-input-label for="additional3" :value="__('page.additional3')" />--}}
-{{--                    <div class="row">--}}
-{{--                        <x-text-input id="additional3" class="block mt-1 w-full" type="text" name="additional[2]" :value="old('additional3')" autocomplete="additional3" />--}}
-{{--                        <x-note>@lang('page.additional_note')</x-note>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                <!-- If Additional fields too much -->
+                <div id="maxFieldsAlert" class="hidden alert">
+                    @lang('page.max_fields_reached')
+                </div>
 
                 <!-- Top 10 Skills -->
                 <div class="mt-4  step_2">
@@ -86,19 +74,19 @@
                 <!-- City -->
                 <div class="mt-4 step_1">
                     <x-input-label for="city" :value="__('page.city')" />
-                    <x-text-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city')" required autocomplete="city" />
+                    <x-text-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city')" required autocomplete="address" />
                 </div>
 
                 <!-- Address -->
                 <div class="mt-4 step_1">
                     <x-input-label for="address" :value="__('page.address')" />
-                    <x-text-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autocomplete="address" />
+                    <x-text-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autocomplete="address-level2" />
                 </div>
 
                 <!-- ZIP -->
                 <div class="mt-4 step_1">
                     <x-input-label for="zip" :value="__('page.zip')" />
-                    <x-text-input id="zip" class="block mt-1 w-full" type="text" name="zip" :value="old('zip')" required autocomplete="zip" />
+                    <x-text-input id="zip" class="block mt-1 w-full" type="text" name="zip" :value="old('zip')" required autocomplete="postal-code" />
                 </div>
 
                 <!-- Working Experience -->
@@ -107,10 +95,30 @@
                     <x-text-input id="experience" class="block mt-1 w-full" type="text" name="experience[0]" :value="old('experience')" />
                 </div>
 
+                <!-- Add Working Experience -->
+                <a class="text-gray-800 step_2 personalized add_experience">
+                    + @lang('page.add_field')
+                </a>
+
+                <!-- If Additional fields too much -->
+                <div id="maxFieldsAlert" class="hidden alert">
+                    @lang('page.max_fields_reached')
+                </div>
+
                 <!-- Studying -->
                 <div class="mt-4 step_2">
                     <x-input-label for="studying" :value="__('page.studying')" />
                     <x-text-input id="studying" class="block mt-1 w-full" type="text" name="studying" :value="old('studying')" />
+                </div>
+
+                <!-- Add Studying -->
+                <a class="text-gray-800 step_2 personalized add_studying">
+                    + @lang('page.add_field')
+                </a>
+
+                <!-- If Additional fields too much -->
+                <div id="maxFieldsAlert" class="hidden alert">
+                    @lang('page.max_fields_reached')
                 </div>
             </div>
         </div>
