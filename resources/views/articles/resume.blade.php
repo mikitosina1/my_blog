@@ -49,11 +49,6 @@
                     + @lang('page.add_field')
                 </a>
 
-                <!-- If Additional fields too much -->
-                <div id="maxFieldsAlert" class="hidden alert">
-                    @lang('page.max_fields_reached')
-                </div>
-
                 <!-- Top 10 Skills -->
                 <div class="mt-4  step_2">
                     <x-input-label for="skills" :value="__('page.skills')" />
@@ -100,19 +95,14 @@
                     + @lang('page.add_field')
                 </a>
 
-                <!-- If Additional fields too much -->
-                <div id="maxFieldsAlert" class="hidden alert">
-                    @lang('page.max_fields_reached')
-                </div>
-
                 <!-- Studying -->
-                <div class="mt-4 step_2">
+                <div class="mt-4 step_3">
                     <x-input-label for="studying" :value="__('page.studying')" />
                     <x-text-input id="studying" class="block mt-1 w-full" type="text" name="studying" :value="old('studying')" />
                 </div>
 
                 <!-- Add Studying -->
-                <a class="text-gray-800 step_2 personalized add_studying">
+                <a class="text-gray-800 step_3 personalized add_studying">
                     + @lang('page.add_field')
                 </a>
 

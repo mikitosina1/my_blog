@@ -94,7 +94,7 @@ div.row {
 }
 
 a.prev {
-    display: none;
+    display: flex;
     cursor: default;
 
 }
@@ -108,7 +108,7 @@ button.print {
     cursor: default;
 }
 
-a.add_field {
+a.add_field, a.add_experience, a.add_studying {
     cursor: default;
 }
 
