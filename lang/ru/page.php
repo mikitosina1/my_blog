@@ -2,6 +2,8 @@
 
 return [
     'resume'             => 'Резюме',
+    'company'            => 'Компания',
+    'description'        => 'Описание',
     'prev'               => 'Предыдущая',
     'next'               => 'Следующая',
     'add_field'          => 'Добавить поле',
@@ -16,6 +18,7 @@ return [
     'skills'             => 'Топ 10 навыков',
     'experience'         => 'Опыт',
     'studying'           => 'Учеба',
+    'education_inst'     => 'Учебное заведение, степень',
     'additional0'        => 'Ресурс',
     'additional1'        => 'Ресурс 1',
     'additional2'        => 'Ресурс 2',

@@ -2,6 +2,8 @@
 
 return [
     'resume'             => 'Resume',
+    'company'            => 'Company',
+    'description'        => 'Company',
     'prev'               => 'Previous',
     'next'               => 'Next',
     'add_field'          => 'Add field',
@@ -16,6 +18,7 @@ return [
     'skills'             => 'Top 10 Skills',
     'experience'         => 'Experience',
     'studying'           => 'Studying',
+    'education_inst'     => 'Educational institution, degree',
     'additional0'        => 'Resource',
     'additional1'        => 'Resource 1',
     'additional2'        => 'Resource 2',

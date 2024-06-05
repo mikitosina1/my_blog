@@ -2,6 +2,8 @@
 
 return [
     'resume'             => 'Lebenslauf',
+    'company'            => 'Firma',
+    'description'        => 'Beschreibung',
     'prev'               => 'Vorherige',
     'next'               => 'Nächste',
     'add_field'          => 'Feld hinzufügen',
@@ -16,6 +18,7 @@ return [
     'skills'             => 'Top 10 Fähigkeiten',
     'experience'         => 'Erfahrung',
     'studying'           => 'Studieren',
+    'education_inst'     => 'Schule, Studium',
     'additional0'        => 'Ressourcen',
     'additional1'        => 'Ressourcen 1',
     'additional2'        => 'Ressourcen 2',

@@ -7,15 +7,6 @@
         <div class="string_1">
             <div class="left">
 
-                <!-- Photo -->
-                <div class="mt-4 step_2">
-                    <x-input-label for="profile_photo" :value="__('page.resume_photo')" />
-                    <x-photo-input id="profile_photo" class="block mt-1 w-full"
-                                   type="file"
-                                   name="profile_photo"
-                                   :enctype="true" />
-                </div>
-
                 <!-- Name -->
                 <div class="mt-4 step_1">
                     <x-input-label for="name" :value="__('page.name_and_lastname')" />
@@ -49,6 +40,15 @@
                     + @lang('page.add_field')
                 </a>
 
+                <!-- Photo -->
+                <div class="mt-4 step_2">
+                    <x-input-label for="profile_photo" :value="__('page.resume_photo')" />
+                    <x-photo-input id="profile_photo" class="block mt-1 w-full"
+                                   type="file"
+                                   name="profile_photo"
+                                   :enctype="true" />
+                </div>
+
                 <!-- Top 10 Skills -->
                 <div class="mt-4  step_2">
                     <x-input-label for="skills" :value="__('page.skills')" />
@@ -57,6 +57,34 @@
                         <x-note>@lang('page.skills_note')</x-note>
                     </div>
                 </div>
+
+                <!-- Working Experience -->
+                <div class="mt-4 step_3 bordered experience">
+                    <div class="legend">{{__('page.experience')}}</div>
+                    <x-input-label for="experience0" :value="__('page.company')" />
+                    <x-text-input id="experience0" class="block mt-1 w-full" type="text" name="experience[0][title]" :value="old('experience')" />
+                    <x-input-label for="experience_desc0" :value="__('page.description')" />
+                    <x-textarea-input id="experience_desc0" class="block mt-1 w-full" type="textarea" name="experience[0][description]" :value="old('experience')" />
+                </div>
+
+                <!-- Add Working Experience -->
+                <a class="text-gray-800 step_3 personalized add_experience">
+                    + @lang('page.add_field')
+                </a>
+
+                <!-- Studying -->
+                <div class="mt-4 step_4 bordered studying">
+                    <div class="legend">{{__('page.studying')}}</div>
+                    <x-input-label for="studying" :value="__('page.education_inst')" />
+                    <x-text-input id="studying" class="block mt-1 w-full" type="text" name="studying[0][title]" :value="old('studying')" />
+                    <x-input-label for="studying_desc" :value="__('page.description')" />
+                    <x-textarea-input id="studying_desc" class="block mt-1 w-full" type="textarea" name="studying[0][description]" :value="old('studying_desc')" />
+                </div>
+
+                <!-- Add Studying -->
+                <a class="text-gray-800 step_4 personalized add_studying">
+                    + @lang('page.add_field')
+                </a>
             </div>
             <div class="right">
 
@@ -83,28 +111,6 @@
                     <x-input-label for="zip" :value="__('page.zip')" />
                     <x-text-input id="zip" class="block mt-1 w-full" type="text" name="zip" :value="old('zip')" required autocomplete="postal-code" />
                 </div>
-
-                <!-- Working Experience -->
-                <div class="mt-4 step_2">
-                    <x-input-label for="experience" :value="__('page.experience')" />
-                    <x-text-input id="experience" class="block mt-1 w-full" type="text" name="experience[0]" :value="old('experience')" />
-                </div>
-
-                <!-- Add Working Experience -->
-                <a class="text-gray-800 step_2 personalized add_experience">
-                    + @lang('page.add_field')
-                </a>
-
-                <!-- Studying -->
-                <div class="mt-4 step_3">
-                    <x-input-label for="studying" :value="__('page.studying')" />
-                    <x-text-input id="studying" class="block mt-1 w-full" type="text" name="studying" :value="old('studying')" />
-                </div>
-
-                <!-- Add Studying -->
-                <a class="text-gray-800 step_3 personalized add_studying">
-                    + @lang('page.add_field')
-                </a>
 
                 <!-- If Additional fields too much -->
                 <div id="maxFieldsAlert" class="hidden alert">

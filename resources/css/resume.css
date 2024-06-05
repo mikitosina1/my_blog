@@ -93,6 +93,14 @@ div.row {
     display: none;
 }
 
+.step_3 {
+    display: none;
+}
+
+.step_4 {
+    display: none;
+}
+
 a.prev {
     display: flex;
     cursor: default;
@@ -116,10 +124,32 @@ a.add_field, a.add_experience, a.add_studying {
     display: none;
 }
 
+.bordered {
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    width: 5vw;
+    transform: translate(1em, -1.2em);
+    color: darkgray;
+    background-color: #1e2937;
+}
+
 .alert {
     padding: 15px;
-    background-color: #f44336;
-    color: white;
+    background-color: rgba(240, 0, 0, 0.5);
+    color: darkgray;
     margin-bottom: 15px;
+    margin-top: 15px;
     border-radius: 5px;
+}
+
+.close {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
