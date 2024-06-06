@@ -85,6 +85,20 @@
                 <a class="text-gray-800 step_4 personalized add_studying">
                     + @lang('page.add_field')
                 </a>
+
+                <!-- Certificates -->
+                <div class="mt-4 step_5 bordered certificates">
+                    <div class="legend">{{__('page.certificates')}}</div>
+                    <x-input-label for="certificates" :value="__('page.certificates_title')" />
+                    <x-text-input id="certificates" class="block mt-1 w-full" type="text" name="certificates[0][title]" :value="old('certificates')" />
+                    <x-input-label for="certificates_desc" :value="__('page.certificates_url')" />
+                    <x-textarea-input id="certificates_desc" class="block mt-1 w-full" type="textarea" name="certificates[0][description]" :value="old('certificates_desc')" />
+                </div>
+
+                <!-- Add Certificates -->
+                <a class="text-gray-800 step_5 personalized add_certificates">
+                    + @lang('page.add_field')
+                </a>
             </div>
             <div class="right">
 

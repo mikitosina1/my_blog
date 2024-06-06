@@ -7,10 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const addAdditionalFieldBtn = $('.add_additional_field');
     const addAdditionalStudying = $('.add_studying');
     const addAdditionalExp = $('.add_experience');
+    const addAdditionalCert = $('.add_certificates');
     let step_1 = $('.step_1');
     let step_2 = $('.step_2');
     let step_3 = $('.step_3');
     let step_4 = $('.step_4');
+    let step_5 = $('.step_5');
 
     const additionalFieldsMax = 3;
     let additionalFieldsCounter = 0;
@@ -18,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let additionalExpCounter = 0;
     const additionalStudMax = 3;
     let additionalStudCounter = 0;
+    const additionalCertMax = 3;
+    let additionalCertCounter = 0;
 
     let step = 1;
 
@@ -26,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         step_2.hide();
         step_3.hide();
         step_4.hide();
+        step_5.hide();
         prev.hide();
         print.hide();
     };
@@ -34,10 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
         step = direction === 'next' ? step + 1 : step - 1;
 
         prev.toggle(step > 1);
-        next.toggle(step < 4);
-        print.toggle(step === 4);
+        next.toggle(step < 5);
+        print.toggle(step === 5);
 
-        [step_1, step_2, step_3, step_4].forEach((el, index) => {
+        [step_1, step_2, step_3, step_4, step_5].forEach((el, index) => {
             el.toggle(step === index + 1).css('display', step === index + 1 ? 'flex' : 'none').css('flex-direction', 'column');
         });
     };
@@ -47,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         step_2 = $('.step_2');
         step_3 = $('.step_3');
         step_4 = $('.step_4');
+        step_5 = $('.step_5');
     };
 
     initializeSteps();
@@ -63,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         closeButton.click(function() {
             if (counterType === 'experience') additionalExpCounter--;
             if (counterType === 'studying') additionalStudCounter--;
+            if (counterType === 'certificates') additionalCertCounter--;
             if (counterType === 'additional') additionalFieldsCounter--;
             block.remove();
             // reinitializeSelectors();
@@ -87,15 +94,22 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (nameAttr) {
-                let newName = nameAttr.replace(/\[\d+\]/, `[${index}]`);
+                let newName = nameAttr.replace(/\[\d+]/, `[${index}]`);
                 $(this).attr('name', newName);
             }
+        });
+    };
+
+    const resetFieldValues = (field) => {
+        field.find('input, textarea').each(function() {
+            $(this).val('');
         });
     };
 
     const createCopyField = (field, button) => {
         let lastAdditionalBlockCopy = field.clone();
         lastAdditionalBlockCopy.find('.close').remove(); // Remove existing close button
+        resetFieldValues(lastAdditionalBlockCopy);
 
         if (!field.first().hasClass('additional')) {
             if (field.first().hasClass('experience')) {
@@ -104,6 +118,9 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (field.first().hasClass('studying')) {
                 additionalStudCounter++;
                 updateFieldAttributes(lastAdditionalBlockCopy, 'studying', additionalStudCounter);
+            } else if (field.first().hasClass('certificates')) {
+                additionalCertCounter++;
+                updateFieldAttributes(lastAdditionalBlockCopy, 'certificates', additionalCertCounter);
             }
             lastAdditionalBlockCopy.find('.legend').after(createCloseButton(lastAdditionalBlockCopy, field.first().attr('class').split(' ')[2]));
             return button.before(lastAdditionalBlockCopy);
@@ -112,7 +129,9 @@ document.addEventListener('DOMContentLoaded', function () {
             let num = additionalFieldsCounter;
             let tag = `additional${num}`;
             let name = `additional[${num}]`;
-            lastAdditionalBlockCopy.find('label').attr('for', tag).text(`Additional ${num}`);
+            lastAdditionalBlockCopy.find('label').attr('for', tag).text(() => {
+                return num <= 1 ? '+ ' + field.find('label').text() : field.find('label').text();
+            });
             lastAdditionalBlockCopy.find('input').attr({ id: tag, name: name, autocomplete: name });
             lastAdditionalBlockCopy.find('.note-container').html(createCloseButton(lastAdditionalBlockCopy, 'additional'));
             return button.before(lastAdditionalBlockCopy);
@@ -140,6 +159,15 @@ document.addEventListener('DOMContentLoaded', function () {
     addAdditionalStudying.click(function () {
         if (additionalStudCounter < additionalStudMax) {
             createCopyField($('.studying').last(), addAdditionalStudying);
+            reinitializeSelectors();
+        } else {
+            dropFieldCountError();
+        }
+    });
+
+    addAdditionalCert.click(function () {
+        if (additionalCertCounter < additionalCertMax) {
+            createCopyField($('.certificates').last(), addAdditionalCert);
             reinitializeSelectors();
         } else {
             dropFieldCountError();
