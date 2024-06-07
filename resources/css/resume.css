@@ -89,6 +89,24 @@ div.row {
     margin-right: .5em;
 }
 
+.skill_block {
+    display: flex;
+    height: 5vh;
+    width: auto;
+    margin-bottom: 1em;
+}
+
+.skill_block > span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 5vh;
+    padding: 1vh;
+    border-radius: 10px;
+    width: max-content;
+    background-color: darkgrey;
+}
+
 .step_2 {
     display: none;
 }

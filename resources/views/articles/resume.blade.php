@@ -50,13 +50,18 @@
                 </div>
 
                 <!-- Top 10 Skills -->
-                <div class="mt-4  step_2">
+                <div class="mt-4  step_2 step_2 skill_block__main">
                     <x-input-label for="skills" :value="__('page.skills')" />
                     <div class="row">
                         <x-text-input id="skills" class="block mt-1 w-full" type="text" name="skills" :value="old('skills')" autocomplete="skills" />
                         <x-note>@lang('page.skills_note')</x-note>
                     </div>
                 </div>
+
+                <!-- Add Skill -->
+                <a class="text-gray-800 step_2 personalized add_skill">
+                    + @lang('page.add_skill')
+                </a>
 
                 <!-- Working Experience -->
                 <div class="mt-4 step_3 bordered experience">

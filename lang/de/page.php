@@ -16,6 +16,7 @@ return [
     'address'            => 'Adresse',
     'zip'                => 'PLZ',
     'skills'             => 'Top 10 Fähigkeiten',
+    'add_skill'          => 'Eine Fähigkeit(s) hinzufügen',
     'experience'         => 'Erfahrung',
     'studying'           => 'Studieren',
     'education_inst'     => 'Schule, Studium',
@@ -27,6 +28,6 @@ return [
     'additional2'        => 'Ressourcen 2',
     'additional3'        => 'Ressourcen 3',
     'additional_note'    => 'Geben Sie in diesem Feld den Namen und die zusätzliche Ressource selbst mit „:“ an. Beispiel - git:github.com/mikitosina1',
-    'skills_note'        => 'Listen Sie Ihre Fähigkeiten durch Kommas getrennt auf. Beispiel: HTML,CSS,Laravel...',
+    'skills_note'        => 'Führen Sie Ihre Fertigkeiten in Kommas oder einzeln auf. Beispiel: HTML, CSS, Laravel...',
     'max_fields_reached' => 'Es können maximal 3 zusätzliche Felder hinzugefügt werden. Das Limit ist erreicht.',
 ];

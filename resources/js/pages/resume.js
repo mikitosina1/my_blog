@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const addAdditionalStudying = $('.add_studying');
     const addAdditionalExp = $('.add_experience');
     const addAdditionalCert = $('.add_certificates');
+    const addSkillBtn = $('.add_skill');
     let step_1 = $('.step_1');
     let step_2 = $('.step_2');
     let step_3 = $('.step_3');
@@ -22,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let additionalStudCounter = 0;
     const additionalCertMax = 3;
     let additionalCertCounter = 0;
+    const skillsMax = 10;
+    let skillsCounter = 0;
 
     let step = 1;
 
@@ -71,8 +74,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (counterType === 'studying') additionalStudCounter--;
             if (counterType === 'certificates') additionalCertCounter--;
             if (counterType === 'additional') additionalFieldsCounter--;
+            if (counterType === 'skills') skillsCounter--;
             block.remove();
-            // reinitializeSelectors();
         });
         return closeButton;
     };
@@ -123,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateFieldAttributes(lastAdditionalBlockCopy, 'certificates', additionalCertCounter);
             }
             lastAdditionalBlockCopy.find('.legend').after(createCloseButton(lastAdditionalBlockCopy, field.first().attr('class').split(' ')[2]));
-            return button.before(lastAdditionalBlockCopy);
+            return $('.right').append(lastAdditionalBlockCopy);
         } else {
             additionalFieldsCounter++;
             let num = additionalFieldsCounter;
@@ -173,6 +176,33 @@ document.addEventListener('DOMContentLoaded', function () {
             dropFieldCountError();
         }
     });
+
+    addSkillBtn.click(function () {
+        let skillsInput = $('#skills');
+        let skillValues = skillsInput.val().trim().split(','); // Разбиваем строку на массив слов
+
+        skillValues.forEach(skillValue => {
+            skillValue = skillValue.trim();
+            if (skillValue !== '' && skillsCounter < skillsMax) {
+                skillsCounter++;
+                let newSkillBlock = $('<div>').attr({class: 'skill_block', id: `skill_block${skillsCounter}`}).css('display', 'flex').addClass('step_2');
+                let skillTitle = $('<span>').attr({class: 'skill_title', id: `skill_title${skillsCounter}`}).text(skillValue).css('display', 'flex').css('flex-direction', 'row');
+                skillTitle.append(createCloseButton(newSkillBlock, 'skills'));
+                skillTitle.find('.close').find('svg').attr({fill: 'black'});
+                let skillsNewInput = $('<input>').attr({type: 'hidden', id: `skill[${skillsCounter}]`, name: `skills[${skillsCounter}]`}).val(skillValue);
+                newSkillBlock.append(skillTitle).append(skillsNewInput);
+                $('.right').append(newSkillBlock);
+            }
+        });
+
+        skillsInput.val('');
+        reinitializeSelectors();
+
+        if (skillsCounter >= skillsMax) {
+            dropFieldCountError();
+        }
+    });
+
 
     function dropFieldCountError() {
         return $('#maxFieldsAlert').removeClass('hidden').delay(8000).queue(function (next) {

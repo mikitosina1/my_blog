@@ -16,6 +16,7 @@ return [
     'address'            => 'Address',
     'zip'                => 'ZIP CODE',
     'skills'             => 'Top 10 Skills',
+    'add_skill'          => 'Add skill(s)',
     'experience'         => 'Experience',
     'studying'           => 'Studying',
     'education_inst'     => 'Educational institution, degree',
@@ -27,6 +28,6 @@ return [
     'additional2'        => 'Resource 2',
     'additional3'        => 'Resource 3',
     'additional_note'    => 'In this field, place the name and the additional resource itself with ‘:’. Example - git:github.com/mikitosina1',
-    'skills_note'        => 'List your skills, separated by commas. Example: HTML,CSS,Laravel...',
+    'skills_note'        => 'List your skills in commas or one at a time.. Example: HTML, CSS, Laravel...',
     'max_fields_reached' => 'A maximum of 3 additional fields can be added. The limit has been reached.',
 ];

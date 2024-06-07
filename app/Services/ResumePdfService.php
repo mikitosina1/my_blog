@@ -64,12 +64,27 @@ class ResumePdfService extends PdfService
     }
 
     /**
+     * generateHtml
+     * -----------------------------------------------------------------------------------------------------------------
      * @param Request $request
      * @return string
      */
     private function generateHtml(Request $request): string
     {
-        $data = [
+        return View::make('documents.'.mb_strtolower($request->get('type')), $this->prepareData($request))->render();
+    }
+
+    /**
+     * prepareData
+     * -----------------------------------------------------------------------------------------------------------------
+     * return to template additional data if it exists
+     *
+     * @param Request $request
+     * @return array
+     */
+    private function prepareData(Request $request): array
+    {
+        return [
             'type' => mb_strtolower($request->get('type')),
             'name' => $request->get('resources'),
             'photo' => $this->getPhotoPath($request),
@@ -80,9 +95,11 @@ class ResumePdfService extends PdfService
             'city' => $request->get('city'),
             'address' => $request->get('address'),
             'zip' => $request->get('zip'),
+            'skills' => $request->get('skills'),
+            'experience' => $request->get('experience'),
+            'studying' => $request->get('studying'),
+            'certificates' => $request->get('certificates'),
         ];
-
-        return View::make('documents.'.mb_strtolower($request->get('type')), $data)->render();
     }
 
     /**
