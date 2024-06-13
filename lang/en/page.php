@@ -3,7 +3,7 @@
 return [
     'resume'             => 'Resume',
     'company'            => 'Company',
-    'description'        => 'Company',
+    'description'        => 'Description',
     'prev'               => 'Previous',
     'next'               => 'Next',
     'add_field'          => 'Add field',
@@ -14,7 +14,7 @@ return [
     'country'            => 'Country',
     'city'               => 'City',
     'address'            => 'Address',
-    'zip'                => 'ZIP CODE',
+    'zip'                => 'ZIP',
     'skills'             => 'Top 10 Skills',
     'add_skill'          => 'Add skill(s)',
     'experience'         => 'Experience',
@@ -28,6 +28,6 @@ return [
     'additional2'        => 'Resource 2',
     'additional3'        => 'Resource 3',
     'additional_note'    => 'In this field, place the name and the additional resource itself with ‘:’. Example - git:github.com/mikitosina1',
-    'skills_note'        => 'List your skills in commas or one at a time.. Example: HTML, CSS, Laravel...',
-    'max_fields_reached' => 'A maximum of 3 additional fields can be added. The limit has been reached.',
+    'skills_note'        => 'List your skils either comma separated or one at a time. Example: HTML, CSS, Laravel,... . You can click the add button and enter one by one, or enter everything in a line and click the add skill button.',
+    'max_fields_reached' => 'A maximum of additional fields can be added. The limit has been reached.',
 ];

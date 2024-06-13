@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addSkillBtn.click(function () {
         let skillsInput = $('#skills');
-        let skillValues = skillsInput.val().trim().split(','); // Разбиваем строку на массив слов
+        let skillValues = skillsInput.val().trim().split(',');
 
         skillValues.forEach(skillValue => {
             skillValue = skillValue.trim();

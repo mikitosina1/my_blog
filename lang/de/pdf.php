@@ -10,4 +10,5 @@ return [
     'city' => 'Stadt',
     'address' => 'Adresse',
     'zip' => 'PLZ',
+    'skills' => 'Top 10 Fähigkeiten: ',
 ];

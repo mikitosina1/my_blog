@@ -35,5 +35,19 @@
             </td>
         </tr>
     </table>
+    <table style="border-collapse: collapse;" cellspacing="15">
+        <tr>
+            <td>
+                <h2>@lang('pdf.skills')</h2>
+                <ul>
+                    @forelse($skills as $skill)
+                        <li>{{ $skill }}</li>
+                    @empty
+                        <p></p>
+                    @endforelse
+                </ul>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

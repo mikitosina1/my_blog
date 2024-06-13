@@ -9,5 +9,6 @@ return [
     'country' => 'Country',
     'city' => 'City',
     'address' => 'Address',
-    'zip' => 'ZIP CODE',
+    'zip' => 'ZIP',
+    'skills' => 'Top 10 skills: ',
 ];
