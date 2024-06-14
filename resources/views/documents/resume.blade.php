@@ -47,6 +47,14 @@
                     @endforelse
                 </ul>
             </td>
+            <td>
+                @forelse($experience as $exp)
+                    <h3>{{ $exp['title'] }}</h3>
+                    <p>{{ $exp['description'] }}</p>
+                @empty
+                    <p></p>
+                @endforelse
+            </td>
         </tr>
     </table>
 </body>
