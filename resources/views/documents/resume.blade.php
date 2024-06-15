@@ -57,5 +57,20 @@
             </td>
         </tr>
     </table>
+    <table style="border-collapse: collapse;" cellspacing="15">
+        <tr>
+            <td>
+                <p></p>
+            </td>
+            <td>
+                @forelse($studying as $st)
+                    <h3>{{ $st['title'] }}</h3>
+                    <p>{{ $st['description'] }}</p>
+                @empty
+                    <p></p>
+                @endforelse
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
