@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Http\Request;
-use TCPDF;
+use App\Extensions\TCPDF_Extension;
 
 /**
  * PdfService
@@ -12,12 +12,12 @@ use TCPDF;
  */
 class PdfService
 {
-    /** @var TCPDF $tcpdf contain TCPDF class */
-    protected TCPDF $tcpdf;
+    /** @var TCPDF_Extension $tcpdf contain TCPDF extended class */
+    protected TCPDF_Extension $tcpdf;
 
     public function __construct()
     {
-        $this->tcpdf = new TCPDF();
+        $this->tcpdf = new TCPDF_Extension();
     }
 
     /**
