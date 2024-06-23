@@ -30,6 +30,7 @@ class ResumePdfService extends PdfService
         $html = $this->generateHtml($request);
 
         $this->tcpdf->writeHTML($html, true, false, true);
+        $this->tcpdf->Footer();
 
         if ($this->tempFile)
             Storage::delete($this->tempFile);
@@ -55,10 +56,10 @@ class ResumePdfService extends PdfService
     private function setMainSettings(): void
     {
         $this->tcpdf->SetFont('cormorantgaramondmedium');
-        $this->tcpdf->SetMargins(0, 0, 0);
-        $this->tcpdf->SetHeaderMargin(0);
-        $this->tcpdf->SetFooterMargin(0);
-        $this->tcpdf->SetAutoPageBreak(TRUE);
+        $this->tcpdf->SetMargins(0, 10, 0);
+        $this->tcpdf->SetHeaderMargin(15);
+        $this->tcpdf->SetFooterMargin();
+        $this->tcpdf->SetAutoPageBreak(TRUE, 20);
         $this->tcpdf->setImageScale(0);
         $this->tcpdf->setPrintHeader(false);
     }

@@ -35,9 +35,12 @@
             </td>
         </tr>
     </table>
+
+    {{--experience--}}
+    <h1 align="center">@lang('pdf.experience')</h1>
     <table style="border-collapse: collapse;" cellspacing="15">
         <tr>
-            <td>
+            <td width="140">
                 <h2>@lang('pdf.skills')</h2>
                 <ul>
                     @forelse($skills as $skill)
@@ -47,7 +50,7 @@
                     @endforelse
                 </ul>
             </td>
-            <td>
+            <td width="400">
                 @forelse($experience as $exp)
                     <h3>{{ $exp['title'] }}</h3>
                     <p>{{ $exp['description'] }}</p>
@@ -57,15 +60,37 @@
             </td>
         </tr>
     </table>
+
+    {{--study--}}
+    <h1 align="center">@lang('pdf.study')</h1>
     <table style="border-collapse: collapse;" cellspacing="15">
         <tr>
-            <td>
+            <td width="140">
                 <p></p>
             </td>
-            <td>
+            <td width="400">
                 @forelse($studying as $st)
-                    <h3>{{ $st['title'] }}</h3>
+                    <h2>{{ $st['title'] }}</h2>
                     <p>{{ $st['description'] }}</p>
+                @empty
+                    <p></p>
+                @endforelse
+            </td>
+        </tr>
+    </table>
+
+    {{--certificates--}}
+    <h1 align="center">@lang('pdf.certificates')</h1>
+    <table style="border-collapse: collapse;" cellspacing="15">
+        <tr>
+            <td width="140">
+                <p></p>
+            </td>
+            <td width="400">
+                @forelse($certificates as $cert)
+                    <h2>{{ $cert['title'] }}</h2>
+                    <p>{{ $cert['description'] }}</p>
+                    <hr width="50">
                 @empty
                     <p></p>
                 @endforelse

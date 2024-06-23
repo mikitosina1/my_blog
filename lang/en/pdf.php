@@ -11,4 +11,7 @@ return [
     'address' => 'Address',
     'zip' => 'ZIP',
     'skills' => 'Top 10 skills: ',
+    'experience' => 'Experience: ',
+    'study' => 'Study information: ',
+    'certificates' => 'Certificates: ',
 ];
