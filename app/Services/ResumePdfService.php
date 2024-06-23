@@ -27,10 +27,10 @@ class ResumePdfService extends PdfService
         $this->setMainSettings();
         $this->tcpdf->AddPage();
         $this->tcpdf->setImageScale(1);
+
         $html = $this->generateHtml($request);
 
         $this->tcpdf->writeHTML($html, true, false, true);
-        $this->tcpdf->Footer();
 
         if ($this->tempFile)
             Storage::delete($this->tempFile);
