@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 
-
 /**
  * ResumePdfService
  * ---------------------------------------------------------------------------------------------------------------------
@@ -35,8 +34,8 @@ class ResumePdfService implements PdfServiceInterface
         $this->setMainSettings();
         $this->tcpdf->AddPage();
         $this->tcpdf->setImageScale(1);
-        $html = $this->generateHtml($request);
 
+        $html = $this->generateHtml($request);
         $this->tcpdf->writeHTML($html, true, false, true);
 
         if ($this->tempFile)
@@ -148,5 +147,10 @@ class ResumePdfService implements PdfServiceInterface
             }
         }
         return $additional_fields;
+    }
+
+    private function makeHeader(array $data)
+    {
+        $this->tcpdf->Cell();
     }
 }
