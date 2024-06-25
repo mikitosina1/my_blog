@@ -2,11 +2,19 @@
 
 namespace App\Services;
 
-use App\Models\PdfService;
+use App\Contracts\PdfServiceInterface;
+use App\Extensions\TCPDF_ExtensionResume;
 use Illuminate\Http\Request;
 
-class ExperiencePdfService extends PdfService
+class ExperiencePdfService implements PdfServiceInterface
 {
+    /** @var TCPDF_ExtensionResume */
+    protected TCPDF_ExtensionResume $tcpdf;
+
+    public function __construct()
+    {
+        $this->tcpdf = new TCPDF_ExtensionResume();
+    }
     public function generatePdf(Request $request): string
     {
         // Логика создания описания опыта работы с использованием TCPDF

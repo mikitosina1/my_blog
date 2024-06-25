@@ -2,7 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\PdfService;
+use App\Contracts\PdfServiceInterface;
+use App\Extensions\TCPDF_Extension_Resume;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
@@ -13,10 +14,17 @@ use Illuminate\Support\Facades\View;
  * ---------------------------------------------------------------------------------------------------------------------
  * Return built resume
  */
-class ResumePdfService extends PdfService
+class ResumePdfService implements PdfServiceInterface
 {
     /** @var string store route to temp folder */
     private string $tempFile = '';
+    /** @var TCPDF_Extension_Resume */
+    protected TCPDF_Extension_Resume $tcpdf;
+
+    public function __construct()
+    {
+        $this->tcpdf = new TCPDF_Extension_Resume();
+    }
 
     /**
      * @param Request $request
@@ -27,7 +35,6 @@ class ResumePdfService extends PdfService
         $this->setMainSettings();
         $this->tcpdf->AddPage();
         $this->tcpdf->setImageScale(1);
-
         $html = $this->generateHtml($request);
 
         $this->tcpdf->writeHTML($html, true, false, true);
@@ -35,7 +42,7 @@ class ResumePdfService extends PdfService
         if ($this->tempFile)
             Storage::delete($this->tempFile);
 
-        return $this->tcpdf->Output(mb_strtolower($request->get('type')).'.pdf'); //I to F
+        return $this->tcpdf->Output(mb_strtolower($request->get('type')).'.pdf','S'); //I to F
     }
 
     /**
@@ -57,8 +64,8 @@ class ResumePdfService extends PdfService
     {
         $this->tcpdf->SetFont('cormorantgaramondmedium');
         $this->tcpdf->SetMargins(0, 10, 0);
-        $this->tcpdf->SetHeaderMargin(15);
-        $this->tcpdf->SetFooterMargin();
+        $this->tcpdf->SetHeaderMargin(0);
+        $this->tcpdf->SetFooterMargin(0);
         $this->tcpdf->SetAutoPageBreak(TRUE, 20);
         $this->tcpdf->setImageScale(0);
         $this->tcpdf->setPrintHeader(false);

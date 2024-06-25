@@ -44,7 +44,7 @@
                 <h2>@lang('pdf.skills')</h2>
                 <ul>
                     @forelse($skills as $skill)
-                        <li>{{ $skill }}</li>
+                        <li><font size="+3">{{ $skill }}</font></li>
                     @empty
                         <p></p>
                     @endforelse
