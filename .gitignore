@@ -28,3 +28,4 @@ yarn-error.log
 /qodana.yaml
 desktop.ini
 tests
+/stubs
