@@ -1,173 +1,173 @@
 button.personalized, a.personalized {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2.5em;
-    width: 10em;
-    max-height: 3.5em;
-    margin: .7em .5em;
-    border-radius: 10px;
-    background: linear-gradient(225deg,#1e2937 -5%,#fff 85%,#ccc);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 2.5em;
+	width: 10em;
+	max-height: 3.5em;
+	margin: .7em .5em;
+	border-radius: 10px;
+	background: linear-gradient(225deg,#1e2937 -5%,#fff 85%,#ccc);
 }
 
 button.personalized:active, a.personalized:active {
-    background: linear-gradient(65deg,#1e2937 -5%,#fff 85%,#ccc);
-    transition: background-color 0.3s ease-in-out;
+	background: linear-gradient(65deg,#1e2937 -5%,#fff 85%,#ccc);
+	transition: background-color 0.3s ease-in-out;
 }
 
 form.flex-row {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .left {
-    width: 43vw;
+	width: 43vw;
 }
 
 .right {
-    display: flex;
-    flex-direction: column;
-    width: 45vw;
+	display: flex;
+	flex-direction: column;
+	width: 45vw;
 }
 
 .string_1 {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .note-container {
-    position: relative;
-    display: inline-block;
-    margin-left: .5em;
+	position: relative;
+	display: inline-block;
+	margin-left: .5em;
 }
 
 .note-icon {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .note-tooltip {
-    visibility: hidden;
-    width: 200px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -100px;
-    opacity: 0;
-    transition: opacity 0.3s;
+	visibility: hidden;
+	width: 200px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -100px;
+	opacity: 0;
+	transition: opacity 0.3s;
 }
 
 .note-tooltip::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
 }
 
 .note-container:hover .note-tooltip {
-    visibility: visible;
-    opacity: 1;
+	visibility: visible;
+	opacity: 1;
 }
 
 div.row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
 .left > div, .right > div {
-    margin-left: .5em;
-    margin-right: .5em;
+	margin-left: .5em;
+	margin-right: .5em;
 }
 
 .skill_block {
-    display: flex;
-    height: 5vh;
-    width: auto;
-    margin-bottom: 1em;
+	display: flex;
+	height: 5vh;
+	width: auto;
+	margin-bottom: 1em;
 }
 
 .skill_block > span {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 5vh;
-    padding: 1vh;
-    border-radius: 10px;
-    width: max-content;
-    background-color: darkgrey;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 5vh;
+	padding: 1vh;
+	border-radius: 10px;
+	width: max-content;
+	background-color: darkgrey;
 }
 
 .step_2 {
-    display: none;
+	display: none;
 }
 
 .step_3 {
-    display: none;
+	display: none;
 }
 
 .step_4 {
-    display: none;
+	display: none;
 }
 
 a.prev {
-    display: flex;
-    cursor: default;
+	display: flex;
+	cursor: default;
 
 }
 
 a.next {
-    cursor: default;
+	cursor: default;
 }
 
 button.print {
-    display: none;
-    cursor: default;
+	display: none;
+	cursor: default;
 }
 
 a.add_field, a.add_experience, a.add_studying {
-    cursor: default;
+	cursor: default;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 .bordered {
-    border: 1px solid darkgray;
-    border-radius: 10px;
-    padding: 5px;
+	border: 1px solid darkgray;
+	border-radius: 10px;
+	padding: 5px;
 }
 
 .legend {
-    display: flex;
-    justify-content: center;
-    width: 5vw;
-    transform: translate(1em, -1.2em);
-    color: darkgray;
-    background-color: #1e2937;
+	display: flex;
+	justify-content: center;
+	width: 5vw;
+	transform: translate(1em, -1.2em);
+	color: darkgray;
+	background-color: #1e2937;
 }
 
 .alert {
-    padding: 15px;
-    background-color: rgba(240, 0, 0, 0.5);
-    color: darkgray;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    border-radius: 5px;
+	padding: 15px;
+	background-color: rgba(240, 0, 0, 0.5);
+	color: darkgray;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	border-radius: 5px;
 }
 
 .close {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
 }
