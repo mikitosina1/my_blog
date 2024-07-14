@@ -7,18 +7,20 @@
 				@if(!empty(isset($modules)))
 					<ul>
 						@foreach($modules as $module)
-							<li>
+							<li class="mb-3 d-flex align-items-center justify-content-between">
 								<span>{{ $module->getName() }}</span>
-								@if($module->isEnabled())
-									<button onclick="toggleModule('{{ $module->getName() }}', 'disable')">Disable</button>
-								@else
-									<button onclick="toggleModule('{{ $module->getName() }}', 'enable')">Enable</button>
-								@endif
+								<label class="switch">
+									<input type="checkbox"
+										   onchange="toggleModule('{{ $module->getName() }}', this.checked ? 'enable' : 'disable')"
+										{{ $module->isEnabled() ? 'checked' : '' }}>
+									<span class="slider"></span>
+								</label>
 							</li>
 						@endforeach
 					</ul>
 				@endif
 			</div>
+
 		</div>
 	</div>
 </x-app-layout>
