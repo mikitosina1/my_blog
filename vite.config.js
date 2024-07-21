@@ -11,11 +11,13 @@ export default defineConfig({
 				'resources/css/welcome.css',
 				'resources/css/resume.css',
 				'resources/css/dashboard.css',
+				'resources/css/dashboard/module_block.css',
 
 				// js
 				'resources/js/app.js',
 				'resources/js/pages/resume.js',
-				'resources/js/pages/dashboard.js'
+				'resources/js/pages/dashboard.js',
+				'resources/js/pages/dashboard/module_block.js'
 			],
 			refresh: true,
 		}),
