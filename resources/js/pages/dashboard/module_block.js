@@ -2,8 +2,12 @@ import './../../bootstrap';
 import $ from 'jquery';
 window.$ = $;
 
+
 window.toggleModule = function(moduleName, action) {
-	fetch(`/module/${action}`, {
+	console.log('MN',moduleName, 'MA', action)
+	const url = action === 'enable' ? '/module/enable' : '/module/disable';
+
+	fetch(url, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',

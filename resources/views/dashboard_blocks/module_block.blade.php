@@ -3,7 +3,6 @@
 	<div class="content-block dark:bg-gray-800 shadow sm:rounded-lg mt-8">
 		<h1 class="dark:text-gray-300">@lang('manage_modules'):</h1>
 		@if(!empty(isset($modules)))
-			<meta name="csrf-token" content="{{ csrf_token() }}">
 			<ul>
 				@foreach($modules as $module)
 					<li class="mb-3 d-flex align-items-center justify-content-between module_line">
@@ -20,3 +19,5 @@
 		@endif
 	</div>
 </div>
+
+<meta name="csrf-token" content="{{ csrf_token() }}">
