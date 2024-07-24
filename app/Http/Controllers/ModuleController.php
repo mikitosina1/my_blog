@@ -8,13 +8,7 @@ use Nwidart\Modules\Facades\Module;
 
 class ModuleController extends Controller
 {
-	/**
-	 * Enable the specified module.
-	 *
-	 * @param Request $request
-	 * @return JsonResponse
-	 */
-	public function enable(Request $request): \Illuminate\Http\JsonResponse
+	public function enable(Request $request): JsonResponse
 	{
 		$moduleName = $request->input('module');
 		$module = Module::find($moduleName);
@@ -27,13 +21,7 @@ class ModuleController extends Controller
 		}
 	}
 
-	/**
-	 * Disable the specified module.
-	 *
-	 * @param Request $request
-	 * @return JsonResponse
-	 */
-	public function disable(Request $request): \Illuminate\Http\JsonResponse
+	public function disable(Request $request): JsonResponse
 	{
 		$moduleName = $request->input('module');
 		$module = Module::find($moduleName);

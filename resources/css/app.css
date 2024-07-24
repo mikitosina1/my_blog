@@ -69,8 +69,6 @@ div.left-nav {
 	justify-content: flex-start;
 }
 
-
-
 div.nav-link-div {
 	margin-top: 1em;
 	height: 2em;
@@ -850,4 +848,9 @@ img, video {
 
 svg.logo {
 	width: 7em;
+}
+
+.btn_back {
+	display: flex;
+	margin-right: 5px;
 }

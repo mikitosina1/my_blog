@@ -12,6 +12,8 @@ export default defineConfig({
 				'resources/css/resume.css',
 				'resources/css/dashboard.css',
 				'resources/css/dashboard/module_block.css',
+				'resources/css/auth/login.css',
+				'resources/css/auth/register.css',
 
 				// js
 				'resources/js/app.js',

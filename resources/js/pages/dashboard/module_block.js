@@ -4,7 +4,6 @@ window.$ = $;
 
 
 window.toggleModule = function(moduleName, action) {
-	console.log('MN',moduleName, 'MA', action)
 	const url = action === 'enable' ? '/module/enable' : '/module/disable';
 
 	fetch(url, {

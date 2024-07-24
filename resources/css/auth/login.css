@@ -1,0 +1,6 @@
+.auth_cloud {
+	display: flex;
+	flex-direction: column;
+	height: 80vh;
+	justify-content: center;
+}
