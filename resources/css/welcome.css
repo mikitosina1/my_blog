@@ -1,14 +1,14 @@
 .content-block {
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
+	display: flex;
+	flex-direction: column;
+	width: 50vw;
 }
 
 .content-block {
-    display: flex;
+	display: flex;
 }
 
 .skill_block > span {
-    border-radius: 10px;
-    background: linear-gradient(225deg,#1e2937 -5%,#fff 85%,#ccc);
+	border-radius: 10px;
+	background: linear-gradient(225deg, #1e2937 -5%, #fff 85%, #ccc);
 }

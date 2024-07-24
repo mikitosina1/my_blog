@@ -1,9 +1,10 @@
 import './../../bootstrap';
 import $ from 'jquery';
+
 window.$ = $;
 
 
-window.toggleModule = function(moduleName, action) {
+window.toggleModule = function (moduleName, action) {
 	const url = action === 'enable' ? '/module/enable' : '/module/disable';
 
 	fetch(url, {

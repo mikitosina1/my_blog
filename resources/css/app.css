@@ -92,7 +92,7 @@ div.logged-panel {
 	align-items: center;
 }
 
-.language_list{
+.language_list {
 	display: flex;
 	position: fixed;
 	flex-direction: column;
@@ -121,7 +121,7 @@ svg.close {
 	color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
-  a {
+a {
 	color: inherit;
 	text-decoration: inherit
 }

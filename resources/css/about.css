@@ -1,90 +1,90 @@
 .content-block {
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
+	display: flex;
+	flex-direction: column;
+	width: 50vw;
 }
 
 .certificates {
-    display: flex;
-    max-height: 6em;
+	display: flex;
+	max-height: 6em;
 }
 
-.certificates>div {
-    max-width: 5em;
-    margin: .5em;
+.certificates > div {
+	max-width: 5em;
+	margin: .5em;
 }
 
 .social {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 3em;
-    max-height: 3.5em;
-    margin-bottom: .7em;
-    margin-top: .7em;
-    border-radius: 10.25px;
-    background: linear-gradient(90deg, #1e2937 10%, #fff 100%, #ccc);
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 3em;
+	max-height: 3.5em;
+	margin-bottom: .7em;
+	margin-top: .7em;
+	border-radius: 10.25px;
+	background: linear-gradient(90deg, #1e2937 10%, #fff 100%, #ccc);
 }
 
-.social>* {
-    max-width: 3.5em;
-    margin-left: .5em;
-    margin-right: .5em;
+.social > * {
+	max-width: 3.5em;
+	margin-left: .5em;
+	margin-right: .5em;
 }
 
 .github:hover {
-    background-color: whitesmoke;
-    border-radius: 50%;
-    border: 3px solid black;
+	background-color: whitesmoke;
+	border-radius: 50%;
+	border: 3px solid black;
 }
 
 .linkedin:hover {
-    fill: royalblue;
-    border: 3px solid royalblue;
-    background-color: whitesmoke;
-    border-radius: 2px;
+	fill: royalblue;
+	border: 3px solid royalblue;
+	background-color: whitesmoke;
+	border-radius: 2px;
 }
 
 .telegram:hover {
-    fill: royalblue;
-    background-color: whitesmoke;
-    border-radius: 50%;
-    border: 3px solid royalblue;
+	fill: royalblue;
+	background-color: whitesmoke;
+	border-radius: 50%;
+	border: 3px solid royalblue;
 }
 
 .gmail:hover {
-    fill: indianred;
-    background-color: whitesmoke;
-    border-radius: 2px;
-    border: 3px solid indianred;
+	fill: indianred;
+	background-color: whitesmoke;
+	border-radius: 2px;
+	border: 3px solid indianred;
 }
 
-.text>*, .text>*>* {
-    height: auto;
+.text > *, .text > * > * {
+	height: auto;
 }
 
 h1 {
-    color: #333;
+	color: #333;
 }
 
 hr {
-    border: 0;
-    height: 1px;
-    background: #ccc;
-    margin: 20px 0;
+	border: 0;
+	height: 1px;
+	background: #ccc;
+	margin: 20px 0;
 }
 
 p {
-    margin-bottom: 15px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+	margin-bottom: 15px;
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
 }
 
 a {
-    color: #007bff;
-    text-decoration: none;
+	color: #007bff;
+	text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
