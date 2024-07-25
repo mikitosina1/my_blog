@@ -3,5 +3,6 @@
 <x-app-layout>
 	<div class="carpet">
 		@include('articles.resume')
+		@include('articles.test')
 	</div>
 </x-app-layout>

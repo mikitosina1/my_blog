@@ -1,4 +1,4 @@
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
@@ -19,9 +19,22 @@ export default defineConfig({
 				'resources/js/app.js',
 				'resources/js/pages/resume.js',
 				'resources/js/pages/dashboard.js',
-				'resources/js/pages/dashboard/module_block.js'
+				'resources/js/pages/dashboard/module_block.js',
+				'resources/js/ck_editor.js'
 			],
 			refresh: true,
 		}),
 	],
+	build: {
+		rollupOptions: {
+			output: {
+				manualChunks(id) {
+					if (id.includes('node_modules')) {
+						return id.toString().split('node_modules/')[1].split('/')[0].toString();
+					}
+				}
+			}
+		},
+		chunkSizeWarningLimit: 1500 // Увеличение лимита размера чанков до 1500 кБ
+	}
 });
