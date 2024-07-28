@@ -12,3 +12,7 @@
 	border-radius: 10px;
 	background: linear-gradient(225deg, #1e2937 -5%, #fff 85%, #ccc);
 }
+
+.ck-powered-by-balloon {
+	display: none!important;
+}

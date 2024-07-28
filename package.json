@@ -17,7 +17,8 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
-        "@ckeditor/ckeditor5-build-classic": "^42.0.1",
+        "@ckeditor/ckeditor5-build-classic": "^42.0.2",
+        "@ckeditor/ckeditor5-code-block": "^42.0.2",
         "bootstrap-icons": "^1.10.5",
         "g": "^2.0.1",
         "jquery": "^3.7.0",
