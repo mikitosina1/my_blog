@@ -16,3 +16,7 @@
 .ck-powered-by-balloon {
 	display: none!important;
 }
+
+div.ck.ck-content.ck-editor__editable {
+	padding-left: 25px;
+}

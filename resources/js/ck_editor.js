@@ -11,7 +11,11 @@ async function initializeEditor() {
 		const { default: ClassicEditor } = await import('@ckeditor/ckeditor5-build-classic');
 
 		const editor = await ClassicEditor.create(document.querySelector('#editor'), {
-			toolbar: ['heading', '|', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', '|', 'link', 'codeBlock', 'imageUpload'],
+			toolbar: [
+				'heading', '|', 'bold', 'italic', '|',
+				'numberedList', 'bulletedList', 'insertTable', '|',
+				'link', 'blockQuote', '|', 'undo', 'redo'
+			],
 			heading: {
 				options: [
 					{ model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
@@ -21,12 +25,17 @@ async function initializeEditor() {
 					{ model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
 					{ model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
 				]
+			},
+			insertTable: {
+				contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
 			}
 		});
-		console.log(editor);
+
+		console.log(Array.from(editor.ui.componentFactory.names()));
+
 	} catch (error) {
-		console.error(error);
+		console.error('Ошибка инициализации редактора:', error);
 	}
 }
 
-initializeEditor();
+document.addEventListener('DOMContentLoaded', initializeEditor);
