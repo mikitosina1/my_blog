@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\LocalizationController;
-use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Requests\PdfController;
 use Illuminate\Support\Facades\Route;
@@ -23,14 +22,8 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/dashboard', function () {
-	$modules = Module::all();
-	return view('dashboard', compact('modules'));
+	return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::prefix('module')->group(function () {
-	Route::post('/enable', [ModuleController::class, 'enable'])->name('module.enable');
-	Route::post('/disable', [ModuleController::class, 'disable'])->name('module.disable');
-});
 
 Route::get('/about', function () {
 	return view('about');

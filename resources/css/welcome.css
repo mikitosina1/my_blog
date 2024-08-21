@@ -4,10 +4,6 @@
 	width: 50vw;
 }
 
-.content-block {
-	display: flex;
-}
-
 .skill_block > span {
 	border-radius: 10px;
 	background: linear-gradient(225deg, #1e2937 -5%, #fff 85%, #ccc);

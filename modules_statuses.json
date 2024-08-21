@@ -1,3 +1,4 @@
 {
-    "Testmodule": true
+    "Testmodule": true,
+    "ModuleManager": true
 }
