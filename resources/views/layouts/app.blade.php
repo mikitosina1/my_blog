@@ -32,6 +32,5 @@
 			{{ $slot }}
 		</main>
 	</div>
-	<x-supportchat></x-supportchat>
 </body>
 </html>
