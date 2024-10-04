@@ -32,6 +32,8 @@
 			{{ $slot }}
 		</main>
 	</div>
-	<x-supportchat></x-supportchat>
+	@if(Module::isEnabled('SupportChat'))
+		<?php echo app()->view->make('supportchat::components.supportchat')->render(); ?>
+	@endif
 </body>
 </html>
