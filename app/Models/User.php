@@ -13,8 +13,6 @@ class User extends Authenticatable
 	use HasApiTokens, HasFactory, Notifiable;
 
 	protected $table = 'users';
-	const ADMIN_ROLE = 'ADMIN_ROLE';
-	const USER_ROLE = 'USER_ROLE';
 
 	/**
 	 * The attributes that are mass assignable.
@@ -56,4 +54,9 @@ class User extends Authenticatable
 	];
 
 	protected $guarded = ["*","\\","drop","/","table"];
+
+	public function role(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+	{
+		return $this->belongsTo(Role::class, 'id', 'role');
+	}
 }

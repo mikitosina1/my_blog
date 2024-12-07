@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Roles extends Model
+class Role extends Model
 {
 	use HasFactory;
 	/* @var string $table table title */
@@ -23,5 +23,10 @@ class Roles extends Model
 	public function permissions(): BelongsToMany
 	{
 		return $this->belongsToMany(Permissions::class,'permissions');
+	}
+
+	public function users(): \Illuminate\Database\Eloquent\Relations\HasMany
+	{
+		return $this->hasMany(User::class, 'role', 'id');
 	}
 }
