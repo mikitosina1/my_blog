@@ -3,7 +3,7 @@ setup: start composer migrate npm-install npm-build
 
 start: ## Starts ddev
 	ddev start
-	ddev ssh auth
+	ddev auth ssh
 
 composer: ## Install composer
 	ddev exec composer install

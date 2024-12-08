@@ -15,7 +15,7 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
 nodejs_version: "18"
-upload_dirs: ["app", "lang", "config", "recourses", "routes", "public"]
+upload_dirs: ["app", "lang", "config", "resources", "routes", "public"]
 
 
 # Key features of DDEV's config.yaml:
