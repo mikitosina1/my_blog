@@ -10,45 +10,45 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    /**
-     * The path to application's "dashboard" route.
-     *
-     * Typically, users are redirected here after authentication.
-     *
-     * @var string
-     */
-    public const DASHBOARD = '/dashboard';
+	/**
+	 * The path to application's "dashboard" route.
+	 *
+	 * Typically, users are redirected here after authentication.
+	 *
+	 * @var string
+	 */
+	public const DASHBOARD = '/dashboard';
 
-    /**
-     * The path to application's "home" route.
-     *
-     * @var string
-     */
-    public const HOME = '/';
+	/**
+	 * The path to application's "home" route.
+	 *
+	 * @var string
+	 */
+	public const HOME = '/';
 
-    /**
-     * The path to application's "about" route.
-     *
-     * @var string
-     */
-    public const ABOUT = '/about';
+	/**
+	 * The path to application's "about" route.
+	 *
+	 * @var string
+	 */
+	public const ABOUT = '/about';
 
-    /**
-     * Define your route model bindings, pattern filters, and other route configuration.
-     */
-    public function boot(): void
-    {
-        RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
-        });
+	/**
+	 * Define your route model bindings, pattern filters, and other route configuration.
+	 */
+	public function boot(): void
+	{
+		RateLimiter::for('api', function (Request $request) {
+			return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
+		});
 
-        $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
+		$this->routes(function () {
+			Route::middleware('api')
+				->prefix('api')
+				->group(base_path('routes/api.php'));
 
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
-        });
-    }
+			Route::middleware('web')
+				->group(base_path('routes/web.php'));
+		});
+	}
 }

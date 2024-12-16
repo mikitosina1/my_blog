@@ -11,13 +11,13 @@ use Illuminate\Http\Request;
  */
 interface PdfServiceInterface
 {
-    /**
-     * generatePdf
-     * -----------------------------------------------------------------------------------------------------------------
-     * Main function pdf generator
-     *
-     * @param Request $request
-     * @return string
-     */
-    public function generatePdf(Request $request): string;
+	/**
+	 * generatePdf
+	 * -----------------------------------------------------------------------------------------------------------------
+	 * Main function pdf generator
+	 *
+	 * @param Request $request
+	 * @return string
+	 */
+	public function generatePdf(Request $request): string;
 }
