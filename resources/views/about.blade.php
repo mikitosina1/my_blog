@@ -1,11 +1,11 @@
 @vite(['resources/js/app.js','resources/css/about.css','resources/css/app.css'])
 <x-app-layout>
     <div class="content-block p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg mt-8">
-        <div class="pimcore certificates">
-            <div><img src="https://pimcore.com/academy/certificate-validation/badge/18PB765KY2E9XVN" style="max-width: 5em; max-height: 5em;" alt="pimcore junior badge"></div>
-            <div><img src="https://pimcore.com/academy/certificate-validation/badge/7Y9WXEG1QCBTA8V" style="max-width: 5em; max-height: 5em;" alt="pimcore senior badge"></div>
-            <div><img src="https://pimcore.com/academy/certificate-validation/badge/7RF9SP5E4JUMXKV" style="max-width: 5em; max-height: 5em;" alt="pimcore enterprise badge"></div>
-        </div>
+{{--        <div class="pimcore certificates">--}}
+{{--            <div><img src="https://pimcore.com/academy/certificate-validation/badge/18PB765KY2E9XVN" style="max-width: 5em; max-height: 5em;" alt="pimcore junior badge"></div>--}}
+{{--            <div><img src="https://pimcore.com/academy/certificate-validation/badge/7Y9WXEG1QCBTA8V" style="max-width: 5em; max-height: 5em;" alt="pimcore senior badge"></div>--}}
+{{--            <div><img src="https://pimcore.com/academy/certificate-validation/badge/7RF9SP5E4JUMXKV" style="max-width: 5em; max-height: 5em;" alt="pimcore enterprise badge"></div>--}}
+{{--        </div>--}}
 
         <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
 
@@ -36,11 +36,10 @@
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">🛠️ @lang('about.0')</p>
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">📋 @lang('about.2')</p>
             <ul>
-                <li class="mt-1 text-sm text-gray-600 dark:text-gray-400">LAMP, LEMP, Linux (Debian & Ubuntu)</li>
-                <li class="mt-1 text-sm text-gray-600 dark:text-gray-400">Cron, PHP 5.0+, Laravel 8, JavaScript, jQuery, AJAX, MySQL (MariaDB), phpMyAdmin</li>
-                <li class="mt-1 text-sm text-gray-600 dark:text-gray-400">Git</li>
-                <li class="mt-1 text-sm text-gray-600 dark:text-gray-400">HTML5, CSS3, Bootstrap, Sass/Less, XML, Bootstrap 5</li>
-                <li class="mt-1 text-sm text-gray-600 dark:text-gray-400">MSOffice, PhpStorm, Agile, OOP, MVC, Teamwork</li>
+                <li class="mt-1 text-sm text-gray-600 dark:text-gray-400">LAMP, LEMP, Linux (Debian & Ubuntu), Docker, DDEV, Git, composer</li>
+                <li class="mt-1 text-sm text-gray-600 dark:text-gray-400">Cron, PHP, Laravel, Shopware, Pimcore, AJAX, MySQL, API</li>
+                <li class="mt-1 text-sm text-gray-600 dark:text-gray-400">JavaScript, jQuery, VUE, HTML, CSS, Bootstrap, Sass/Less, XML, Bootstrap, vite</li>
+                <li class="mt-1 text-sm text-gray-600 dark:text-gray-400">PhpStorm, Agile, OOP, MVC, DRY, KISS, Teamwork, AI</li>
             </ul>
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">📘 @lang('about.3')</p>
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">⌨️ @lang('about.4')</p>
