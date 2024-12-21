@@ -22,6 +22,6 @@ class ExperiencePdfService implements PdfServiceInterface
 		$this->tcpdf->SetFont('times', 'B', 16);
 		$this->tcpdf->Cell(40, 10, $request->get('type'));
 
-		return $this->tcpdf->Output($request->get('type') . '.pdf', 'I');//I to S
+		return $this->tcpdf->Output($request->get('type') . '.pdf', 'S');//I to S
 	}
 }
