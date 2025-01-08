@@ -35,3 +35,6 @@ clean: ## remove cache and local dependencies
 	ddev exec php artisan config:clear
 	ddev exec php artisan route:clear
 	ddev exec php artisan view:clear
+
+swatch: ## Run style rebuilding
+	ddev exec npm run watch
