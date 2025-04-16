@@ -29,6 +29,7 @@
         "bootstrap-icons": "^1.10.5",
         "g": "^2.0.1",
         "jquery": "^3.7.0",
+        "laravel-echo": "^2.0.2",
         "npm-watch": "^0.11.0",
         "semver": "^7.5.4"
     }

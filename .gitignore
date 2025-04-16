@@ -18,7 +18,6 @@ yarn-error.log
 /.idea
 /.vscode
 /composer.lock
-/.env.example
 /.editorconfig
 /package-lock.json
 */vite.config.js
