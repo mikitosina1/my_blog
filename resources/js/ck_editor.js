@@ -31,10 +31,10 @@ async function initializeEditor() {
 			}
 		});
 
-		console.log(Array.from(editor.ui.componentFactory.names()));
+		// console.log(Array.from(editor.ui.componentFactory.names()));
 
 	} catch (error) {
-		console.error('Ошибка инициализации редактора:', error);
+		console.error('!CK Initialization error:', error);
 	}
 }
 

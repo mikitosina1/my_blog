@@ -3,6 +3,7 @@
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Requests\PdfController;
+use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use Nwidart\Modules\Facades\Module;
 
@@ -40,5 +41,10 @@ Route::middleware('auth')->group(function () {
 Route::prefix('pdf')->group(function () {
 	Route::post('/', [PdfController::class, 'generatePdf'])->name('pdf.generatePdf');
 });
+
+Broadcast::channel('chat.{roomId}', function ($user, $roomId) {
+	return true;
+});
+
 
 require __DIR__ . '/auth.php';

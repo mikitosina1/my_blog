@@ -5,8 +5,9 @@ php_version: "8.1"
 webserver_type: nginx-fpm
 router_http_port: "80"
 router_https_port: "443"
-xdebug_enabled: false
-additional_hostnames: []
+xdebug_enabled: true
+additional_hostnames:
+  - ws
 additional_fqdns: []
 database:
     type: mariadb
@@ -16,6 +17,7 @@ composer_version: "2"
 web_environment: []
 nodejs_version: "18"
 upload_dirs: ["app", "lang", "config", "resources", "routes", "public"]
+
 
 
 # Key features of DDEV's config.yaml:

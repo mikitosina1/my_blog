@@ -28,3 +28,5 @@ I use here:
 * * don't forget to prepare server for using website (apache or nginx)
 
 Also you can use Makefile as roadmap 'how to run'. Very useful comands there.
+
+https://ws.ddev.site/laravel-websockets - for websockets UI
