@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
@@ -22,12 +24,23 @@ class AuthenticatedSessionController extends Controller
 
 	/**
 	 * Handle an incoming authentication request.
+	 * @throws ValidationException
 	 */
 	public function store(LoginRequest $request): RedirectResponse
 	{
 		$request->authenticate();
 
 		$request->session()->regenerate();
+		/* @var User $user */
+		$user = Auth::user();
+		$tokenName = 'GGzs9@9';
+
+		$request->session()->put($tokenName, [
+			'user' => $user,
+			'token' => $user->createToken($tokenName)->plainTextToken,
+			'message' => 'Login successful',
+		]);
+
 
 		return redirect()->intended(RouteServiceProvider::HOME);
 	}
