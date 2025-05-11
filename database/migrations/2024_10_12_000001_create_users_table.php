@@ -20,12 +20,12 @@ return new class extends Migration
 			$table->string('password');
 			$table->string('profile_photo')->default("");
 			$table->string('bio')->default("");
-			$table->unsignedBigInteger('role')->default(11);
+			$table->unsignedBigInteger('role_id')->default(env('USER_ROLE'));
 			$table->ipAddress()->default('');
 			$table->rememberToken();
 			$table->timestamps();
 
-			$table->foreign('role')->references('id')->on('roles');
+			$table->foreign('role_id')->references('id')->on('roles');
 		});
 	}
 

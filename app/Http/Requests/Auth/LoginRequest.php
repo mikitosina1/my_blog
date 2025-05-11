@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Models\User;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
@@ -49,6 +50,10 @@ class LoginRequest extends FormRequest
 				'email' => trans('auth.failed'),
 			]);
 		}
+
+		/* @var $user User */
+		$user = Auth::user();
+		$user->update(['ip_address' => $this->ip()]);
 
 		RateLimiter::clear($this->throttleKey());
 	}

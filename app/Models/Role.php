@@ -7,6 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * Class Role
+ *
+ * Main Role class definition
+ *
+ * @property int $id basic role id
+ * @property string $title role title
+ * @property string $created_at when created
+ * @property string $updated_at when updated
+ */
 class Role extends Model
 {
 	use HasFactory;
@@ -14,13 +24,13 @@ class Role extends Model
 	/* @var string $table table title */
 	protected $table = 'roles';
 
-	/* @var array $fillable fillable fields in table */
+	/* @var array $fillable fillable fields in a table */
 	protected $fillable = [
-		'role',
+		'title',
 	];
 
 	/**
-	 * @return BelongsToMany connection with permissions
+	 * @return BelongsToMany in connection with permissions
 	 */
 	public function permissions(): BelongsToMany
 	{
@@ -29,6 +39,6 @@ class Role extends Model
 
 	public function users(): HasMany
 	{
-		return $this->hasMany(User::class, 'role', 'id');
+		return $this->hasMany(User::class, 'role_id', 'id');
 	}
 }

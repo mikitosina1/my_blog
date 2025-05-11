@@ -9,6 +9,24 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Class User
+ *
+ * Main User class definition
+ *
+ * @property int $id basic user id
+ * @property string $name user name
+ * @property string $lastname user lastname
+ * @property string $email user email
+ * @property string|null $email_verified_at account verified at
+ * @property string $password user password
+ * @property string|null $remember_token remember me (hidden)
+ * @property string $profile_photo user photo
+ * @property string $bio few words about user
+ * @property int $role_id user role
+ * @property string $ip_address user ip address
+ * @property int $visitor user visitor or not (hidden)
+ */
 class User extends Authenticatable
 {
 	use HasApiTokens, HasFactory, Notifiable;
@@ -28,7 +46,7 @@ class User extends Authenticatable
 		'password',
 		'profile_photo',
 		'bio',
-		'role',
+		'role_id',
 		'ip_address'
 	];
 
@@ -40,7 +58,6 @@ class User extends Authenticatable
 	protected $hidden = [
 		'password',
 		'remember_token',
-		'role',
 		'visitor',
 	];
 
@@ -58,6 +75,6 @@ class User extends Authenticatable
 
 	public function role(): BelongsTo
 	{
-		return $this->belongsTo(Role::class, 'id', 'role');
+		return $this->belongsTo(Role::class, 'role_id', 'id');
 	}
 }
