@@ -83,7 +83,7 @@ class RegisteredUserController extends Controller
 	/**
 	 * prepareUserData
 	 * -----------------------------------------------------------------------------------------------------------------
-	 * prepares array of data for register new user
+	 * prepares an array of data for register a new user
 	 *
 	 * @param Request $request
 	 * @param string|null $photo
