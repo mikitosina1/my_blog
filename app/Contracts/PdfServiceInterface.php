@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 /**
  * PdfService
  * ---------------------------------------------------------------------------------------------------------------------
- * Interface for pdf documents with their own basics
+ * Interface for PDF documents with their own basics
  */
 interface PdfServiceInterface
 {
 	/**
 	 * generatePdf
 	 * -----------------------------------------------------------------------------------------------------------------
-	 * Main function pdf generator
+	 * Main function PDF generator
 	 *
 	 * @param Request $request
 	 * @return string

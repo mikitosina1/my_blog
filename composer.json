@@ -2,7 +2,11 @@
 	"name": "laravel/laravel",
 	"type": "project",
 	"description": "My own blog on laravel",
-	"keywords": ["laravel", "framework", "mikitosina1"],
+	"keywords": [
+		"laravel",
+		"framework",
+		"mikitosina1"
+	],
 	"license": "MIT",
 	"require": {
 		"php": "^8.1",

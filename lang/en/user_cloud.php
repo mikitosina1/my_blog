@@ -1,7 +1,7 @@
 <?php
-	return [
-		'register' => 'Register',
-		'login' => 'Login',
-		'logout' => 'Logout',
-		'personalPage' => 'Personal page',
-	];
+return [
+	'register' => 'Register',
+	'login' => 'Login',
+	'logout' => 'Logout',
+	'personalPage' => 'Personal page',
+];

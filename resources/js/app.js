@@ -1,13 +1,12 @@
 import './bootstrap';
 
 import Alpine from 'alpinejs';
+// import jquery
+import $ from 'jquery';
 
 window.Alpine = Alpine;
 
 Alpine.start();
-
-// import jquery
-import $ from 'jquery';
 
 window.$ = $;
 

@@ -8,15 +8,15 @@ router_https_port: "443"
 xdebug_enabled: true
 additional_hostnames:
   - ws
-additional_fqdns: []
+additional_fqdns: [ ]
 database:
-    type: mariadb
-    version: "10.4"
+  type: mariadb
+  version: "10.4"
 use_dns_when_possible: true
 composer_version: "2"
-web_environment: []
+web_environment: [ ]
 nodejs_version: "18"
-upload_dirs: ["app", "lang", "config", "resources", "routes", "public"]
+upload_dirs: [ "app", "lang", "config", "resources", "routes", "public" ]
 
 
 

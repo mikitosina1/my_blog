@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'failed'   => 'Diese Anmeldeinformationen stimmen nicht mit unseren Unterlagen überein.',
+	'failed' => 'Diese Anmeldeinformationen stimmen nicht mit unseren Unterlagen überein.',
 	'password' => 'Das angegebene Passwort ist falsch.',
 	'throttle' => 'Zu viele Anmeldeversuche. Bitte versuchen Sie es in :5 Minuten erneut.',
 	'registered' => 'Sie sind erfolgreich registriert! Jetzt können Sie die Erweiterungsfunktion nutzen. ^^',

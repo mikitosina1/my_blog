@@ -5,7 +5,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Requests\PdfController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
-use Nwidart\Modules\Facades\Module;
 
 /*
 |--------------------------------------------------------------------------

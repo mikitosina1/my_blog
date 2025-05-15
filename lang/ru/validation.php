@@ -128,7 +128,7 @@ return [
 	'required' => 'Поле :attribute обязательно для заполнения.',
 	'required_array_keys' => 'Поле :attribute должно содержать записи для: :values.',
 	'required_if' => 'Поле :attribute обязательно, когда :other равно :value.',
-	'required_if_accepted' => 'Поле :attribute обязательн',    'required_unless' => 'Поле :attribute обязательно, если :other не входит в :values.',
+	'required_if_accepted' => 'Поле :attribute обязательн', 'required_unless' => 'Поле :attribute обязательно, если :other не входит в :values.',
 	'required_with' => 'Поле :attribute обязательно, когда присутствует :values.',
 	'required_with_all' => 'Поле :attribute обязательно, когда присутствуют :values.',
 	'required_without' => 'Поле :attribute обязательно, когда отсутствует :values.',
