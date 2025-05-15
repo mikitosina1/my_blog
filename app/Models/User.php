@@ -14,18 +14,18 @@ use Laravel\Sanctum\HasApiTokens;
  *
  * Main User class definition
  *
- * @property int $id basic user id
- * @property string $name user name
- * @property string $lastname user lastname
- * @property string $email user email
+ * @property int         $id basic user id
+ * @property string      $name user name
+ * @property string      $lastname user lastname
+ * @property string      $email user email
  * @property string|null $email_verified_at account verified at
- * @property string $password user password
+ * @property string      $password user password
  * @property string|null $remember_token remember me (hidden)
- * @property string $profile_photo user photo
- * @property string $bio few words about user
- * @property int $role_id user role
- * @property string $ip_address user ip address
- * @property int $visitor user visitor or not (hidden)
+ * @property string      $profile_photo user photo
+ * @property string      $bio few words about user
+ * @property int         $role_id user roles id
+ * @property string      $ip_address user ip address
+ * @property int         $visitor user visitor or not (hidden)
  */
 class User extends Authenticatable
 {
