@@ -19,6 +19,7 @@
 				@lang('aside.about')
 			</x-nav-link>
 		</div>
+		@includeIf('modulemanager::partials.desktop-links')
 	</div>
 
 	<!-- Hamburger -->

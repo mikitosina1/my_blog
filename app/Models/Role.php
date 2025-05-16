@@ -68,6 +68,6 @@ class Role extends Model
 	 */
 	public function getRoleTitle(int $role_id): string
 	{
-		return self::find($role_id);
+		return self::find($role_id)->title;
 	}
 }
