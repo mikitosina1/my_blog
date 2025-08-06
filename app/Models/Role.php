@@ -28,6 +28,10 @@ class Role extends Model
 {
 	use HasFactory;
 
+	public const ADMIN = 'admin';
+	public const USER = 'user';
+
+
 	/* @var string $table table title */
 	protected $table = 'roles';
 
@@ -69,5 +73,10 @@ class Role extends Model
 	public function getRoleTitle(int $role_id): string
 	{
 		return self::find($role_id)->title;
+	}
+
+	public function isAdmin(): bool
+	{
+		return $this->title === self::ADMIN;
 	}
 }
