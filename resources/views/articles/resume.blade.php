@@ -1,5 +1,5 @@
 @vite(['resources/js/pages/resume.js', 'resources/css/resume.css'])
-<div class="content-block p-4 sm:p-8 dark:bg-gray-800 shadow sm:rounded-lg mt-8">
+<div class="content-block p-4 sm:p-8 dark:bg-gray-900 shadow sm:rounded-lg mt-8">
 	<h2 class="text-gray-200">@lang('page.resume')</h2>
 	<form method="POST" action="{{ route('pdf.generatePdf') }}" enctype="multipart/form-data" class="flex-row">
 		@csrf

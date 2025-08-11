@@ -1,5 +1,5 @@
 @vite(['resources/js/ck_editor.js'])
-<div class="content-block p-4 sm:p-8 dark:bg-gray-800 shadow sm:rounded-lg mt-8">
+<div class="content-block p-4 sm:p-8 dark:bg-gray-900 shadow sm:rounded-lg mt-8">
 	<form method="POST" action="posts/save">
 		@csrf
 		<!-- Powered by CKEditor -->
