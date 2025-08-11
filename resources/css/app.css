@@ -1,12 +1,15 @@
+@import "variables.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 *, ::after, ::before {
 	box-sizing: border-box;
 	border-width: 0;
 	border-style: solid;
-	border-color: #e5e7eb
+	border-color: var(--block-border-color);
 }
 
 ::after, ::before {
@@ -49,7 +52,7 @@ nav {
 }
 
 div.carpet {
-	background-color: #1e2937;
+	background-color: var(--block-background-color);
 	background-image: radial-gradient(silver .1px, transparent 1px);
 	background-size: 25px 25px;
 }
@@ -239,7 +242,7 @@ textarea {
 
 input::placeholder, textarea::placeholder {
 	opacity: 1;
-	color: #9ca3af
+	color: var(--main-text-color)
 }
 
 [role=button], button {

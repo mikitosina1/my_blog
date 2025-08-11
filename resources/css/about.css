@@ -33,7 +33,7 @@
 }
 
 .github:hover {
-	background-color: whitesmoke;
+	background-color: var(--main-text-color);
 	border-radius: 50%;
 	border: 3px solid black;
 }
@@ -41,20 +41,20 @@
 .linkedin:hover {
 	fill: royalblue;
 	border: 3px solid royalblue;
-	background-color: whitesmoke;
+	background-color: var(--main-text-color);
 	border-radius: 2px;
 }
 
 .telegram:hover {
 	fill: royalblue;
-	background-color: whitesmoke;
+	background-color: var(--main-text-color);
 	border-radius: 50%;
 	border: 3px solid royalblue;
 }
 
 .gmail:hover {
 	fill: indianred;
-	background-color: whitesmoke;
+	background-color: var(--main-text-color);
 	border-radius: 2px;
 	border: 3px solid indianred;
 }
@@ -70,7 +70,7 @@ h1 {
 hr {
 	border: 0;
 	height: 1px;
-	background: #ccc;
+	background: var(--main-text-color);
 	margin: 20px 0;
 }
 
@@ -81,7 +81,7 @@ p {
 }
 
 a {
-	color: #007bff;
+	color: var(--link-color);
 	text-decoration: none;
 }
 
