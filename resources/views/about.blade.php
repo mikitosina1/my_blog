@@ -41,21 +41,36 @@
 			<p class="mt-1 text-sm text-gray-600 dark:text-gray-400">@lang('about.iam')</p>
 			<p class="mt-1 text-sm text-gray-600 dark:text-gray-400">📣 @lang('about.1')</p>
 			<p class="mt-1 text-sm text-gray-600 dark:text-gray-400">🛠️ @lang('about.0')</p>
-			<p class="mt-1 text-sm text-gray-600 dark:text-gray-400">📋 @lang('about.2')</p>
-			<ul>
-				<li class="mt-1 text-sm text-gray-600 dark:text-gray-400">LAMP, LEMP, Linux (Debian & Ubuntu), Docker,
-					DDEV, Git, composer
-				</li>
-				<li class="mt-1 text-sm text-gray-600 dark:text-gray-400">Cron, PHP, Laravel, Shopware, Pimcore, AJAX,
-					MySQL, API
-				</li>
-				<li class="mt-1 text-sm text-gray-600 dark:text-gray-400">JavaScript, jQuery, VUE, HTML, CSS, Bootstrap,
-					Sass/Less, XML, Bootstrap, vite
-				</li>
-				<li class="mt-1 text-sm text-gray-600 dark:text-gray-400">PhpStorm, Agile, OOP, MVC, DRY, KISS,
-					Teamwork, AI
-				</li>
-			</ul>
+			<div class="border border-gray-300 rounded-lg p-4 space-y-2 mt-1 mb-1">
+				<p class="mt-1 text-sm text-gray-600 dark:text-gray-400">📋 @lang('about.2')</p>
+				<hr>
+				<ul>
+					<li class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+						<strong>Backend Development:</strong> PHP, Laravel, Symfony, Pimcore, Shopware, OXID, Node.js, NestJS
+					</li>
+					<li class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+						<strong>Frontend Development:</strong> HTML, CSS, SASS/LESS, JavaScript, jQuery, AJAX, Vue.js, React, Tailwind CSS, Bootstrap, Vite
+					</li>
+					<li class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+						<strong>Databases:</strong> MySQL, PDO, PostgreSQL, MongoDB
+					</li>
+					<li class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+						<strong>APIs and Integration:</strong> REST, API, WebHook
+					</li>
+					<li class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+						<strong>DevOps Tools:</strong> Linux, Git, Docker, DDEV, Vagrant, SSH
+					</li>
+					<li class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+						<strong>Automation:</strong> CRON
+					</li>
+					<li class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+						<strong>Other Tools:</strong> Figma, PHPStorm, MS Office
+					</li>
+					<li class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+						<strong>Methodologies:</strong> OOP, MVC, KISS, DRY
+					</li>
+				</ul>
+			</div>
 			<p class="mt-1 text-sm text-gray-600 dark:text-gray-400">📘 @lang('about.3')</p>
 			<p class="mt-1 text-sm text-gray-600 dark:text-gray-400">⌨️ @lang('about.4')</p>
 			<p class="mt-1 text-sm text-gray-600 dark:text-gray-400">🏅 @lang('about.5')</p>
