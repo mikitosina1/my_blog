@@ -27,7 +27,12 @@ async function getConfig() {
 				input: allPaths,
 				refresh: true,
 			})
-		]
+		],
+		resolve: {
+			alias: {
+				'@fortawesome': '/node_modules/@fortawesome',
+			},
+		},
 	});
 }
 

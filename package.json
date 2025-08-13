@@ -26,6 +26,7 @@
 		"@ckeditor/ckeditor5-image": "^42.0.2",
 		"@ckeditor/ckeditor5-link": "^42.0.2",
 		"@ckeditor/ckeditor5-upload": "^42.0.2",
+		"@fortawesome/fontawesome-free": "^7.0.0",
 		"bootstrap-icons": "^1.10.5",
 		"g": "^2.0.1",
 		"jquery": "^3.7.0",
