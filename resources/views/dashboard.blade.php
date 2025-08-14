@@ -23,4 +23,3 @@
 		</div>
 	</x-user-dashboard-module-blocks>
 </x-app-layout>
-
