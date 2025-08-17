@@ -14,7 +14,7 @@
 				<div class="widgets-container">
 					@foreach ($modules as $module)
 						@php
-							$viewName = strtolower($module->getName()) . '::dashboard-block';
+							$viewName = strtolower($module->getName()) . '::user.dashboard-block';
 						@endphp
 						@includeIf($viewName)
 					@endforeach
