@@ -17,7 +17,7 @@ async function getConfig() {
 		'resources/js/app.js',
 		'resources/js/pages/resume.js',
 		'resources/js/pages/dashboard.js',
-		'resources/js/ck_editor.js'
+		// 'resources/js/ck_editor.js'
 	];
 	const allPaths = await collectModuleAssetsPaths(paths, 'Modules');
 
