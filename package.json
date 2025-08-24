@@ -19,6 +19,7 @@
 		"vite": "^5.0.0"
 	},
 	"dependencies": {
+		"@alpinejs/collapse": "^3.14.9",
 		"@ckeditor/ckeditor5-adapter-ckfinder": "^42.0.2",
 		"@ckeditor/ckeditor5-basic-styles": "^42.0.2",
 		"@ckeditor/ckeditor5-build-classic": "^42.0.2",
