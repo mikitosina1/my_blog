@@ -63,7 +63,7 @@ class RegisteredUserController extends Controller
 	/**
 	 * handleProfilePhoto
 	 * -----------------------------------------------------------------------------------------------------------------
-	 * prepares way for photo and stores pic, if its exists
+	 * prepares way for a photo and stores pic if it exists
 	 *
 	 * @param Request $request
 	 * @return ?string

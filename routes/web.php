@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\EmailVerificationNotificationController;
+use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Requests\PdfController;
@@ -12,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
+| routes are loaded by the RouteServiceProvider, and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
 */
@@ -44,6 +46,19 @@ Route::prefix('pdf')->group(function () {
 Broadcast::channel('chat.{roomId}', function ($user, $roomId) {
 	return true;
 });
+
+// Email Verification Routes
+Route::get('/email/verify', function () {
+	return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', VerifyEmailController::class)
+	->middleware(['auth', 'signed'])
+	->name('verification.verify');
+
+Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
+	->middleware(['auth', 'throttle:6,1'])
+	->name('verification.send');
 
 
 require __DIR__ . '/auth.php';
