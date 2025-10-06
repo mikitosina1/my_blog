@@ -13,7 +13,9 @@ use Illuminate\View\View;
 class ConfirmablePasswordController extends Controller
 {
 	/**
-	 * Show the confirm password view.
+	 * Show the confirmation password view.
+	 *
+	 * @return View
 	 */
 	public function show(): View
 	{
@@ -22,6 +24,10 @@ class ConfirmablePasswordController extends Controller
 
 	/**
 	 * Confirm the user's password.
+	 *
+	 * @param Request $request
+	 * @return RedirectResponse
+	 * @throws ValidationException
 	 */
 	public function store(Request $request): RedirectResponse
 	{
