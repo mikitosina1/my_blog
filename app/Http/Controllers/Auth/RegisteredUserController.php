@@ -13,6 +13,9 @@ use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
 {
+	/**
+	 * @param UserService $userService
+	 */
 	public function __construct(
 		private readonly UserService $userService
 	) {}
