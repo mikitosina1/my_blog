@@ -54,12 +54,12 @@ class UserService
 	{
 		return [
 			'name' => $validatedData['name'],
-			'lastname' => $validatedData['lastname'] ?? null,
+			'lastname' => $validatedData['lastname'] ?? '',
 			'email' => $validatedData['email'],
 			'email_verified_at' => null,
 			'password' => bcrypt($validatedData['password']),
 			'profile_photo' => $photo,
-			'bio' => $validatedData['bio'] ?? null,
+			'bio' => $validatedData['bio'] ?? '',
 			'ip_address' => request()->ip(),
 		];
 	}
