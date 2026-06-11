@@ -13,37 +13,29 @@ use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
 {
-	/**
-	 * @param UserService $userService
-	 */
-	public function __construct(
-		private readonly UserService $userService
-	) {}
+    public function __construct(
+        private readonly UserService $userService
+    ) {}
 
-	/**
-	 * Display the registration view.
-	 *
-	 * @return View
-	 */
-	public function create(): View
-	{
-		return view('auth.register');
-	}
+    /**
+     * Display the registration view.
+     */
+    public function create(): View
+    {
+        return view('auth.register');
+    }
 
-	/**
-	 * Handle an incoming registration request.
-	 *
-	 * @param StoreUserRequest $request
-	 * @return RedirectResponse
-	 */
-	public function store(StoreUserRequest $request): RedirectResponse
-	{
-		$user = $this->userService->createFromRequest($request);
+    /**
+     * Handle an incoming registration request.
+     */
+    public function store(StoreUserRequest $request): RedirectResponse
+    {
+        $user = $this->userService->createFromRequest($request);
 
-		event(new Registered($user));
+        event(new Registered($user));
 
-		Auth::login($user);
+        Auth::login($user);
 
-		return redirect(RouteServiceProvider::DASHBOARD);
-	}
+        return redirect(RouteServiceProvider::DASHBOARD);
+    }
 }

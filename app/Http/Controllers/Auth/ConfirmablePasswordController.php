@@ -12,36 +12,32 @@ use Illuminate\View\View;
 
 class ConfirmablePasswordController extends Controller
 {
-	/**
-	 * Show the confirmation password view.
-	 *
-	 * @return View
-	 */
-	public function show(): View
-	{
-		return view('auth.confirm-password');
-	}
+    /**
+     * Show the confirmation password view.
+     */
+    public function show(): View
+    {
+        return view('auth.confirm-password');
+    }
 
-	/**
-	 * Confirm the user's password.
-	 *
-	 * @param Request $request
-	 * @return RedirectResponse
-	 * @throws ValidationException
-	 */
-	public function store(Request $request): RedirectResponse
-	{
-		if (!Auth::guard('web')->validate([
-			'email' => $request->user()->email,
-			'password' => $request->password,
-		])) {
-			throw ValidationException::withMessages([
-				'password' => __('auth.password'),
-			]);
-		}
+    /**
+     * Confirm the user's password.
+     *
+     * @throws ValidationException
+     */
+    public function store(Request $request): RedirectResponse
+    {
+        if (! Auth::guard('web')->validate([
+            'email' => $request->user()->email,
+            'password' => $request->password,
+        ])) {
+            throw ValidationException::withMessages([
+                'password' => __('auth.password'),
+            ]);
+        }
 
-		$request->session()->put('auth.password_confirmed_at', time());
+        $request->session()->put('auth.password_confirmed_at', time());
 
-		return redirect()->intended(RouteServiceProvider::HOME);
-	}
+        return redirect()->intended(RouteServiceProvider::HOME);
+    }
 }

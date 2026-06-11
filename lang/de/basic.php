@@ -1,6 +1,6 @@
 <?php
 
 return [
-	'save' => 'Speichern',
-	'your_text' => 'Geben Sie hier Ihren Text ein...',
+    'save' => 'Speichern',
+    'your_text' => 'Geben Sie hier Ihren Text ein...',
 ];

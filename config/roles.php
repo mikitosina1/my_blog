@@ -1,6 +1,6 @@
 <?php
 
 return [
-	'admin' => (int) env('ADMIN_ROLE'),
-	'user' => (int) env('USER_ROLE'),
+    'admin' => (int) env('ADMIN_ROLE'),
+    'user' => (int) env('USER_ROLE'),
 ];

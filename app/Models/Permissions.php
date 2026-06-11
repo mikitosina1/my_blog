@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Permissions extends Model
 {
-	/* @var string $table table title */
-	protected $table = 'permissions';
+    /* @var string $table table title */
+    protected $table = 'permissions';
 
-	/**
-	 * @return BelongsToMany connection with roles
-	 */
-	public function roles(): BelongsToMany
-	{
-		return $this->belongsToMany(Role::class, 'roles');
-	}
+    /**
+     * @return BelongsToMany connection with roles
+     */
+    public function roles(): BelongsToMany
+    {
+        return $this->belongsToMany(Role::class, 'roles');
+    }
 }

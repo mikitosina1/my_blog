@@ -20,45 +20,44 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-	return view('welcome');
+    return view('welcome');
 })->name('welcome');
 
 Route::get('/dashboard', function () {
-	return view('dashboard');
+    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/about', function () {
-	return view('about');
+    return view('about');
 })->name('about');
 
 Route::get('/lang/{locale}', [LocalizationController::class, 'switch'])->name('lang.switch');
 
 Route::middleware('auth')->group(function () {
-	Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-	Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-	Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::prefix('pdf')->group(function () {
-	Route::post('/', [PdfController::class, 'generatePdf'])->name('pdf.generatePdf');
+    Route::post('/', [PdfController::class, 'generatePdf'])->name('pdf.generatePdf');
 });
 
 Broadcast::channel('chat.{roomId}', function ($user, $roomId) {
-	return true;
+    return true;
 });
 
 // Email Verification Routes
 Route::get('/email/verify', function () {
-	return view('auth.verify-email');
+    return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
 
 Route::get('/email/verify/{id}/{hash}', VerifyEmailController::class)
-	->middleware(['auth', 'signed'])
-	->name('verification.verify');
+    ->middleware(['auth', 'signed'])
+    ->name('verification.verify');
 
 Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-	->middleware(['auth', 'throttle:6,1'])
-	->name('verification.send');
+    ->middleware(['auth', 'throttle:6,1'])
+    ->name('verification.send');
 
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

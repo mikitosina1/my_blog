@@ -12,21 +12,21 @@ use Symfony\Component\HttpFoundation\Response;
 
 class IsAdmin
 {
-	/**
-	 * Handle an incoming request.
-	 *
-	 * @param Closure(Request): (Response)  $next
-	 */
-	public function handle(Request $request, Closure $next): Response
-	{
-		/* @var User $user */
-		$user = Auth::user();
-		$role = new Role();
+    /**
+     * Handle an incoming request.
+     *
+     * @param  Closure(Request): (Response)  $next
+     */
+    public function handle(Request $request, Closure $next): Response
+    {
+        /* @var User $user */
+        $user = Auth::user();
+        $role = new Role;
 
-		if (!$user || $role->getRoleTitle($user->role_id) != UserRole::Admin->value) {
-			abort(403, 'Access denied');
-		}
+        if (! $user || $role->getRoleTitle($user->role_id) != UserRole::Admin->value) {
+            abort(403, 'Access denied');
+        }
 
-		return $next($request);
-	}
+        return $next($request);
+    }
 }
