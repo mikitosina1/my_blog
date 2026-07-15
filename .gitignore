@@ -9,6 +9,8 @@
 .env.backup
 .env.production
 .phpunit.result.cache
+.ai
+.proxyai
 Homestead.json
 Homestead.yaml
 auth.json
@@ -30,3 +32,4 @@ tests
 /stubs
 Modules
 modules_statuses.json
+PROXYAI.md
