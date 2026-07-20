@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Services\ExperiencePdfService;
 use App\Services\ResumePdfService;
 use Illuminate\Contracts\Container\BindingResolutionException;
