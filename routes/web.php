@@ -3,8 +3,8 @@
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Requests\PdfController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 
