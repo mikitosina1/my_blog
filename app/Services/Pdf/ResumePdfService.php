@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Pdf;
 
 use App\Contracts\PdfServiceInterface;
+use App\Data\Pdf\GeneratePdfData;
 use App\Extensions\TCPDF_Extension_Resume;
-use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 
@@ -15,30 +16,34 @@ use Illuminate\Support\Facades\View;
  */
 class ResumePdfService implements PdfServiceInterface
 {
-    /** @var string store route to temp folder */
-    private string $tempFile = '';
-
     protected TCPDF_Extension_Resume $tcpdf;
 
-    public function __construct()
-    {
+    public function __construct(
+        protected readonly TemporaryPdfImageStorage $temporaryImages,
+    ) {
         $this->tcpdf = new TCPDF_Extension_Resume;
+
     }
 
-    public function generatePdf(Request $request): string
+    /**
+     *
+     * @param GeneratePdfData $data
+     * @return string
+     */
+    public function generatePdf(GeneratePdfData $data): string
     {
-        $this->setMainSettings();
-        $this->tcpdf->AddPage();
-        $this->tcpdf->setImageScale(1);
+        try {
+            $this->setMainSettings();
+            $this->tcpdf->AddPage();
+            $this->tcpdf->setImageScale(1);
 
-        $html = $this->generateHtml($request);
-        $this->tcpdf->writeHTML($html, true, false, true);
+            $html = $this->generateHtml($data);
+            $this->tcpdf->writeHTML($html, true, false, true);
 
-        if ($this->tempFile) {
-            Storage::delete($this->tempFile);
+            return $this->tcpdf->Output(mb_strtolower($data->type).'.pdf', 'S');
+        } finally {
+            $this->temporaryImages->cleanup();
         }
-
-        return $this->tcpdf->Output(mb_strtolower($request->get('type')).'.pdf', 'S'); // I to F
     }
 
     /**
@@ -68,53 +73,41 @@ class ResumePdfService implements PdfServiceInterface
     /**
      * generateHtml
      * -----------------------------------------------------------------------------------------------------------------
+     *
+     * @param GeneratePdfData $data
+     * @return string
      */
-    private function generateHtml(Request $request): string
+    private function generateHtml(GeneratePdfData $data): string
     {
-        return View::make('documents.'.mb_strtolower($request->get('type')), $this->prepareData($request))->render();
+        return View::make('documents.'.mb_strtolower($data->type), $this->prepareData($data))->render();
     }
 
     /**
      * prepareData
      * -----------------------------------------------------------------------------------------------------------------
      * return to template additional data if it exists
+     *
+     * @param GeneratePdfData $data
+     * @return array
      */
-    private function prepareData(Request $request): array
+    private function prepareData(GeneratePdfData $data): array
     {
         return [
-            'type' => mb_strtolower($request->get('type')),
-            'name' => $request->get('resources'),
-            'photo' => $this->getPhotoPath($request),
-            'additional' => $this->getAdditionalData($request->get('additional')),
-            'phone' => $request->get('phone'),
-            'email' => $request->get('email'),
-            'country' => $request->get('country'),
-            'city' => $request->get('city'),
-            'address' => $request->get('address'),
-            'zip' => $request->get('zip'),
-            'skills' => $request->get('skills'),
-            'experience' => $request->get('experience'),
-            'studying' => $request->get('studying'),
-            'certificates' => $request->get('certificates'),
+            'type' => mb_strtolower($data->type),
+            'name' => $data->name,
+            'photo' => $this->temporaryImages->store($data->profilePhoto),
+            'additional' => $this->getAdditionalData($data->additional),
+            'phone' => $data->phone,
+            'email' => $data->email,
+            'country' => $data->country,
+            'city' => $data->city,
+            'address' => $data->address,
+            'zip' => $data->zip,
+            'skills' => $this->prepareSkills($data->skills),
+            'experience' => $data->experience,
+            'studying' => $data->studying,
+            'certificates' => $data->certificates,
         ];
-    }
-
-    /**
-     * getPhotoPath
-     * -----------------------------------------------------------------------------------------------------------------
-     * save photo and returns url to this photo
-     */
-    public function getPhotoPath(Request $request): string
-    {
-        if ($request->hasFile('profile_photo')) {
-            $folder = 'public/temp/';
-            Storage::makeDirectory($folder);
-            $this->tempFile = $request->file('profile_photo')->store($folder);
-
-            return Storage::url($this->tempFile);
-        } else {
-            return '';
-        }
     }
 
     /**
@@ -123,6 +116,7 @@ class ResumePdfService implements PdfServiceInterface
      * return to template additional data if it exists
      *
      * @param  array  $additional  fields for additional connections name: data
+     * @return array
      */
     private function getAdditionalData(array $additional = []): array
     {
@@ -135,6 +129,23 @@ class ResumePdfService implements PdfServiceInterface
         }
 
         return $additional_fields;
+    }
+
+    /**
+     *
+     * @param string|null $skills
+     * @return array
+     */
+    private function prepareSkills(?string $skills): array
+    {
+        if ($skills === null || trim($skills) === '') {
+            return [];
+        }
+
+        return array_values(array_filter(array_map(
+            trim(...),
+            explode(',', $skills)
+        )));
     }
 
     private function makeHeader(array $data): void

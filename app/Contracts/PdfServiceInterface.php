@@ -2,7 +2,7 @@
 
 namespace App\Contracts;
 
-use Illuminate\Http\Request;
+use App\Data\Pdf\GeneratePdfData;
 
 /**
  * PdfService
@@ -15,6 +15,9 @@ interface PdfServiceInterface
      * generatePdf
      * -----------------------------------------------------------------------------------------------------------------
      * Main function PDF generator
+     *
+     * @param GeneratePdfData $data
+     * @return string
      */
-    public function generatePdf(Request $request): string;
+    public function generatePdf(GeneratePdfData $data): string;
 }

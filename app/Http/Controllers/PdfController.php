@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\ExperiencePdfService;
-use App\Services\ResumePdfService;
+use App\Services\Pdf\ExperiencePdfService;
+use App\Services\Pdf\ResumePdfService;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Foundation\Application;

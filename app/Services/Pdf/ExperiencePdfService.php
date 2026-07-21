@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Pdf;
 
 use App\Contracts\PdfServiceInterface;
+use App\Data\Pdf\GeneratePdfData;
 use App\Extensions\TCPDF_Extension_Resume;
-use Illuminate\Http\Request;
 
 class ExperiencePdfService implements PdfServiceInterface
 {
@@ -15,12 +15,12 @@ class ExperiencePdfService implements PdfServiceInterface
         $this->tcpdf = new TCPDF_Extension_Resume;
     }
 
-    public function generatePdf(Request $request): string
+    public function generatePdf(GeneratePdfData $data): string
     {
         $this->tcpdf->AddPage();
         $this->tcpdf->SetFont('times', 'B', 16);
-        $this->tcpdf->Cell(40, 10, $request->get('type'));
+        $this->tcpdf->Cell(40, 10, $data->type);
 
-        return $this->tcpdf->Output($request->get('type').'.pdf', 'S'); // I to S
+        return $this->tcpdf->Output($data->type.'.pdf', 'S'); // I to S
     }
 }
