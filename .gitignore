@@ -28,7 +28,9 @@ yarn-error.log
 /public/build/*
 /qodana.yaml
 desktop.ini
-tests
+/tests/Unit
+/tests/.postman
+/tests/postman
 /stubs
 Modules
 modules_statuses.json
