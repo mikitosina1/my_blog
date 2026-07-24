@@ -26,6 +26,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::delete('/', 'destroy')->name('destroy');
         });
 });
+Route::view('/react', 'react');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/pdf.php';
