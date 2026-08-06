@@ -1,0 +1,28 @@
+@use "reset";
+@use "variables";
+@use "theme";
+
+/*
+|--------------------------------------------------------------------------
+| Global styles
+|--------------------------------------------------------------------------
+*/
+
+html,
+body,
+#app {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-family), serif;
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+
+    transition:
+        background-color var(--transition-normal),
+        color var(--transition-normal);
+}
