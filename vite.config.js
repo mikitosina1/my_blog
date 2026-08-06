@@ -1,6 +1,7 @@
 import {defineConfig} from 'vite';
 import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
+import path from 'node:path';
 import collectModuleAssetsPaths from './vite-module-loader.js';
 
 async function getConfig() {
@@ -21,7 +22,7 @@ async function getConfig() {
         // 'resources/js/ck_editor.js'
 
         // react
-        'resources/ts/main.tsx',
+        'resources/ts/app/main.tsx',
     ];
     const allPaths = await collectModuleAssetsPaths(paths, 'Modules');
 
@@ -35,6 +36,7 @@ async function getConfig() {
         ],
         resolve: {
             alias: {
+                '@': path.resolve(__dirname, 'resources/ts'),
                 '@fortawesome': '/node_modules/@fortawesome',
             },
         },

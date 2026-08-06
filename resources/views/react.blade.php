@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test page for react learning</title>
 
-    @vite('resources/ts/main.tsx')
+    @vite('resources/ts/app/main.tsx')
 </head>
 <body>
-<div id="app"></div>
+    <div id="app"></div>
 </body>
 </html>
