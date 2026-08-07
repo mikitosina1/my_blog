@@ -1,6 +1,4 @@
-import './logo.scss';
-
-import LogoSvg from './logo.svg';
+import LogoSvg from '@/components/core/sidebar/components/logo/logo.svg';
 
 interface LogoProps {
     compact?: boolean;

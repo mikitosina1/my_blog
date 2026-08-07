@@ -1,5 +1,5 @@
-import Logo from "@/components/core/logo/Logo";
-import Sidebar from "@/components/core/Sidebar";
+import Logo from "@/components/core/sidebar/components/logo/Logo";
+import Sidebar from "./Sidebar";
 
 export default function AppSidebar() {
     return (
