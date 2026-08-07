@@ -24,13 +24,11 @@
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
 
-        "baseUrl": "./resources/ts",
-
-        "paths": {
-            "@/*": [
-                "*"
-            ]
-        }
+      "paths": {
+        "@/*": [
+          "./resources/ts/*"
+        ]
+      }
     },
 
     "include": [
