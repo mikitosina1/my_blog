@@ -1,9 +1,8 @@
 import './AppLayout.scss';
-import '@/components/core/core.scss';
 
-import AppSidebar from '@/components/core/AppSidebar';
-import AppTopbar from '@/components/core/AppTopbar';
-import FloatingLayer from '@/components/core/FloatingLayer';
+import { AppSidebar } from '@/components/core/sidebar';
+import { AppTopbar } from '@/components/core/topbar';
+import { FloatingLayer } from '@/components/core/floating';
 
 export default function AppLayout() {
     return (
