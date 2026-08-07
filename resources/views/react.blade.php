@@ -1,3 +1,12 @@
+@php
+    $lang = [
+        'aside' => trans('aside'),
+        'about' => trans('about'),
+        'basic' => trans('basic'),
+        'user_cloud' => trans('user_cloud')
+    ];
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +17,7 @@
         window.Localization = {
             locale: "{{ app()->getLocale() }}",
 
-            translations: @json([
-                'aside' => __('aside'),
-                'about' => __('about'),
-                'basic' => __('basic')
-            ])
+            translations: @json($lang)
         };
     </script>
     @vite('resources/ts/app/main.tsx')

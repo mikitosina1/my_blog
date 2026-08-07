@@ -5,4 +5,6 @@ return [
     'login' => 'Anmeldung',
     'logout' => 'Abmeldung',
     'personalPage' => 'Persönliche Seite',
+    'profile' => 'Profil',
+    'settings' => 'Einstellungen',
 ];
