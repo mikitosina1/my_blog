@@ -1,0 +1,45 @@
+.app-logo {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
+    text-decoration: none;
+    color: inherit;
+    user-select: none;
+
+    &__image {
+        width: 140px;
+        height: auto;
+        display: block;
+        transition: transform .25s ease;
+    }
+
+    &:hover &__image {
+        transform: scale(1.03);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .15rem;
+    }
+
+    &__title {
+        font-size: .95rem;
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--color-text);
+    }
+
+    &--compact {
+        padding: 1rem;
+
+        .app-logo__image {
+            width: 140px;
+            max-width: 100%;
+        }
+    }
+}
