@@ -1,0 +1,32 @@
+.app-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        var(--sidebar-width)
+        1fr;
+
+    grid-template-rows:
+        var(--topbar-height)
+        1fr;
+
+    grid-template-areas:
+        "sidebar topbar"
+        "sidebar content";
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: var(--color-background);
+
+}
+
+.app-layout__content {
+
+    grid-area: content;
+
+    overflow-y: auto;
+
+    padding: var(--space-6);
+
+}
