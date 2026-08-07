@@ -1,3 +1,8 @@
+@use "@/components/core/sidebar/sidebar";
+@use "@/components/core/topbar/topbar";
+@use "@/components/core/floating/floating";
+@use "@/components/core/sidebar/components/logo/logo";
+
 .app-layout {
 
     display: grid;
@@ -16,17 +21,11 @@
 
     width: 100%;
     min-height: 100vh;
-
     background: var(--color-background);
-
 }
 
 .app-layout__content {
-
     grid-area: content;
-
     overflow-y: auto;
-
     padding: var(--space-6);
-
 }
