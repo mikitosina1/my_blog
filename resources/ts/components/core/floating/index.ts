@@ -1,0 +1,1 @@
+export { default as FloatingLayer } from '@/components/core/floating/components/FloatingLayer';
