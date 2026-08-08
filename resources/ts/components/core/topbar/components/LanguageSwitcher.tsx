@@ -1,30 +1,27 @@
-import { languages } from "@/config/languages";
+import Dropdown from '@/components/ui/Dropdown';
+import IconButton from '@/components/ui/IconButton';
+
+import { Globe } from 'lucide-react';
+import { languages } from '@/config/languages';
 
 export default function LanguageSwitcher() {
+
     return (
-        <div className="language-switcher">
-
-            <button
-                type="button"
-                className="language-switcher__button"
-            >
-                🌍
-            </button>
-
-            <div className="language-switcher__dropdown">
-
-                {languages.map(language => (
-                    <button
-                        key={language.code}
-                        type="button"
-                        className="language-switcher__item"
-                    >
-                        {language.label}
-                    </button>
-                ))}
-
-            </div>
-
-        </div>
+        <Dropdown
+            trigger={
+                <IconButton aria-label="Language">
+                    <Globe size={18} />
+                </IconButton>
+            }
+        >
+            {languages.map(language => (
+                <button
+                    key={language.code}
+                    className="dropdown__item"
+                >
+                    {language.name}
+                </button>
+            ))}
+        </Dropdown>
     );
 }

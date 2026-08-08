@@ -1,6 +1,6 @@
-import LanguageSwitcher from "@/components/core/topbar/components/LanguageSwitcher";
-import ThemeSwitcher from "@/components/core/topbar/components/ThemeSwitcher";
-import UserMenu from "@/components/core/topbar/components/UserMenu";
+import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeSwitcher from "./ThemeSwitcher";
+import UserMenu from "./UserMenu";
 
 export default function AppTopbar() {
     return (

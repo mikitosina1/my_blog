@@ -1,0 +1,32 @@
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    transition:
+            background .2s ease,
+            border-color .2s ease,
+            transform .15s ease;
+
+    &:hover {
+        background: var(--color-surface-hover);
+        border-color: var(--color-border);
+    }
+
+    &:active {
+        transform: scale(.96);
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+
+}

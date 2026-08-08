@@ -1,12 +1,13 @@
+import IconButton from '@/components/ui/IconButton';
+import { Moon } from 'lucide-react';
+
 export default function ThemeSwitcher() {
     return (
-        <button
-            type="button"
-            className="theme-switcher"
-            title="Switch theme"
+        <IconButton
             aria-label="Switch theme"
+            title="Switch theme"
         >
-            🌙
-        </button>
+            <Moon size={18} />
+        </IconButton>
     );
 }
