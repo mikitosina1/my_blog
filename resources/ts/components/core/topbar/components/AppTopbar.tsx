@@ -7,9 +7,7 @@ export default function AppTopbar() {
         <header className="app-topbar">
             <div className="app-topbar__left">
                 <button className="sidebar-toggle" />
-                <div className="breadcrumbs">
-                    Dashboard
-                </div>
+                <div className="breadcrumbs"></div>
             </div>
 
             <div className="app-topbar__right">

@@ -27,7 +27,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         });
 });
 
-Route::view('/react', 'react');
+Route::view('/react/{any?}', 'react')
+    ->where('any', '.*');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/pdf.php';
