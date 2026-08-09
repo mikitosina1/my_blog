@@ -2,11 +2,7 @@
     position: fixed;
     inset: 0;
 
+    z-index: var(--z-support);
+
     pointer-events: none;
-
-    z-index: 1000;
-
-    > * {
-        pointer-events: auto;
-    }
 }
