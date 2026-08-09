@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import LogoSvg from '@/components/core/sidebar/components/logo/logo.svg';
 
 interface LogoProps {
@@ -9,7 +11,6 @@ export default function Logo({
                                  compact = false,
                                  href = '/',
                              }: LogoProps) {
-
     const content = (
         <div className={`app-logo ${compact ? 'app-logo--compact' : ''}`}>
             <img
@@ -29,11 +30,11 @@ export default function Logo({
     );
 
     return (
-        <a
-            href={href}
+        <Link
+            to={href}
             className="app-logo__link"
         >
             {content}
-        </a>
+        </Link>
     );
 }

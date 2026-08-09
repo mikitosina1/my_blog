@@ -1,23 +1,24 @@
+import { NavLink } from 'react-router-dom';
+
 import tr from '@/services/TranslationService';
 
 interface SidebarItemProps {
     title: string;
-    href: string;
-    active?: boolean;
+    route: string;
 }
 
 export default function SidebarItem({
                                         title,
-                                        href,
-                                        active = false,
+                                        route,
                                     }: SidebarItemProps) {
-
     return (
-        <a
-            href={href}
-            className={`sidebar-item ${active ? 'sidebar-item--active' : ''}`}
+        <NavLink
+            to={route}
+            className={({ isActive }) =>
+                `sidebar-item${isActive ? ' sidebar-item--active' : ''}`
+            }
         >
             {tr.t(title)}
-        </a>
+        </NavLink>
     );
 }
