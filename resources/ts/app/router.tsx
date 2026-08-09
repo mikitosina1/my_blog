@@ -1,10 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import tr from '@/services/TranslationService';
-
 import AppLayout from '@/layouts/AppLayout';
 
 import About from '@/pages/About/About';
+import Home from '@/pages/Home/Home';
 
 const router = createBrowserRouter(
     [
@@ -14,7 +13,7 @@ const router = createBrowserRouter(
             children: [
                 {
                     index: true,
-                    element: <div>{tr.t('aside.home')}</div>,
+                    element: <Home />,
                 },
                 {
                     path: 'about',

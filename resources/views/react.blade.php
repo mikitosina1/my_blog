@@ -1,6 +1,7 @@
 @php
     $lang = [
         'aside' => trans('aside'),
+        'home' => trans('home'),
         'about' => trans('about'),
         'basic' => trans('basic'),
         'user_cloud' => trans('user_cloud')

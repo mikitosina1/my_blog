@@ -22,6 +22,7 @@ return [
         'infrastructure' => 'Infrastruktur',
         'architecture' => 'Architektur',
         'tools' => 'Werkzeuge',
+        'ecommerce' => 'E-Commerce',
     ],
 
     'approach' => [
