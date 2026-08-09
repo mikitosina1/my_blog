@@ -4,6 +4,8 @@ import tr from '@/services/TranslationService';
 
 import AppLayout from '@/layouts/AppLayout';
 
+import About from '@/pages/About/About';
+
 const router = createBrowserRouter(
     [
         {
@@ -16,7 +18,7 @@ const router = createBrowserRouter(
                 },
                 {
                     path: 'about',
-                    element: <div>{tr.t('aside.about')}</div>,
+                    element: <About />,
                 },
             ],
         },
