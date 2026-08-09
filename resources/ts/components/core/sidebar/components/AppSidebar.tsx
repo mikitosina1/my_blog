@@ -4,11 +4,14 @@ import Sidebar from "./Sidebar";
 export default function AppSidebar() {
     return (
         <aside className="app-sidebar">
-            <div className="app-sidebar__header">
+            <header className="app-sidebar__header">
                 <Logo />
-            </div>
+            </header>
 
-            <nav className="app-sidebar__navigation">
+            <nav
+                className="app-sidebar__navigation"
+                aria-label="Main navigation"
+            >
                 <Sidebar />
             </nav>
 

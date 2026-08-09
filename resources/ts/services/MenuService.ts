@@ -12,6 +12,8 @@ class MenuService {
                 route: '/',
                 section: 'core',
                 order: 10,
+                active: true,
+                icon: 'home',
             },
 
             {
@@ -20,6 +22,8 @@ class MenuService {
                 route: '/about',
                 section: 'core',
                 order: 20,
+                active: true,
+                icon: 'about',
             },
 
         ];

@@ -15,13 +15,22 @@ export default function UserMenu() {
                 </IconButton>
             }
         >
-            <button className="dropdown__item">
+            <button
+                type="button"
+                className="dropdown__item"
+            >
                 {tr.t('user_cloud.profile')}
             </button>
-            <button className="dropdown__item">
+            <button
+                type="button"
+                className="dropdown__item"
+            >
                 {tr.t('user_cloud.settings')}
             </button>
-            <button className="dropdown__item">
+            <button
+                type="button"
+                className="dropdown__item"
+            >
                 {tr.t('user_cloud.logout')}
             </button>
         </Dropdown>
