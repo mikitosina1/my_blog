@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'title' => 'Домашняя',
     'directions' => [
         'eyebrow' => 'Основные направления',
         'title' => 'С чем я работаю',

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'title' => 'Startseite',
     'directions' => [
         'eyebrow' => 'Meine Schwerpunkte',
         'title' => 'Womit ich arbeite',

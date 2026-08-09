@@ -1,35 +1,27 @@
 /*
 |--------------------------------------------------------------------------
-| Dark Theme (default)
+| Dark Theme
 |--------------------------------------------------------------------------
 */
 
-:root {
-
+:root,
+[data-theme="dark"] {
     color-scheme: dark;
 
     --color-background: #0F172A;
-
     --color-surface: #1A2438;
-
     --color-surface-hover: #243146;
-
     --color-surface-active: #314159;
-
-    --color-border: rgba(255,255,255,.08);
+    --color-border: rgba(255, 255, 255, .08);
 
     --color-text: #F8FAFC;
-
     --color-text-muted: #94A3B8;
 
     --color-primary: #4F8CFF;
 
     --color-success: #22C55E;
-
     --color-warning: #F59E0B;
-
     --color-danger: #EF4444;
-
 }
 
 /*
@@ -38,30 +30,21 @@
 |--------------------------------------------------------------------------
 */
 
-:root[data-theme="light"] {
-
+[data-theme="light"] {
     color-scheme: light;
 
     --color-background: #F5F7FA;
-
     --color-surface: #FFFFFF;
-
     --color-surface-hover: #F8FAFC;
-
     --color-surface-active: #EDF2F7;
-
     --color-border: #E5E7EB;
 
     --color-text: #111827;
-
     --color-text-muted: #6B7280;
 
     --color-primary: #2563EB;
 
     --color-success: #16A34A;
-
     --color-warning: #D97706;
-
     --color-danger: #DC2626;
-
 }

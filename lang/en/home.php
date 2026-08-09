@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'title' => 'Home',
     'directions' => [
         'eyebrow' => 'Main areas',
         'title' => 'What I work with',
