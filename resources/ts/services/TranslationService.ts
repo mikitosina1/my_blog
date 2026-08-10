@@ -1,28 +1,35 @@
-declare global {
-    interface Localization {
-        Localization: {
-            locale: string;
-
-            translations: Record<string, any>;
-        };
-    }
-}
+import BootstrapService from './BootstrapService';
 
 class TranslationService {
+    public t(key: string): string {
+        const [namespace, ...path] = key.split('.');
 
-    t(path: string): string {
+        const bootstrap = BootstrapService.get();
 
-        const parts = path.split('.');
+        let value: unknown;
 
-        let current: any = window.Localization.translations;
-
-        for (const part of parts) {
-            current = current?.[part];
+        if (namespace in bootstrap.translations.core) {
+            value = bootstrap.translations.core[namespace];
+        } else {
+            value = bootstrap.modules[namespace];
         }
 
-        return current ?? path;
-    }
+        for (const part of path) {
+            if (
+                typeof value !== 'object' ||
+                value === null ||
+                !(part in value)
+            ) {
+                return key;
+            }
 
+            value = (value as Record<string, unknown>)[part];
+        }
+
+        return typeof value === 'string'
+            ? value
+            : key;
+    }
 }
 
 export default new TranslationService();

@@ -1,11 +1,10 @@
+import modules from '@/app/generated/modules';
 import { MenuItem } from '@/types/Menu';
 
 class MenuService {
 
     public getCoreMenu(): MenuItem[] {
-
         return [
-
             {
                 id: 'home',
                 title: 'aside.home',
@@ -25,11 +24,21 @@ class MenuService {
                 active: true,
                 icon: 'about',
             },
-
         ];
-
     }
 
+    public getModuleMenu(): MenuItem[] {
+        return modules.flatMap(
+            (module) => module.navigation ?? [],
+        );
+    }
+
+    public getMenu(): MenuItem[] {
+        return [
+            ...this.getCoreMenu(),
+            ...this.getModuleMenu(),
+        ].sort((a, b) => a.order - b.order);
+    }
 }
 
 export default new MenuService();

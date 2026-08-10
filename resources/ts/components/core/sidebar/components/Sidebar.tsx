@@ -3,7 +3,7 @@ import MenuService from '@/services/MenuService';
 
 export default function Sidebar() {
 
-    const items = MenuService.getCoreMenu();
+    const items = MenuService.getMenu();
 
     return (
         <>
