@@ -7,7 +7,13 @@ import { languages } from '@/config/languages';
 
 export default function LanguageSwitcher() {
     const switchLanguage = (locale: string) => {
-        window.location.href = `/lang/${locale}`;
+        const currentPath = [
+            window.location.pathname,
+            window.location.search,
+            window.location.hash,
+        ].join('');
+
+        window.location.href = `/lang/${locale}?redirect=${encodeURIComponent(currentPath)}`;
     };
 
     return (

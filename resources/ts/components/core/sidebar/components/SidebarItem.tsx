@@ -1,13 +1,9 @@
 import {
-    House,
-    CircleUserRound,
-} from 'lucide-react';
-
-import {
     NavLink,
 } from 'react-router-dom';
 
 import tr from '@/services/TranslationService';
+import IconService from '@/services/IconService';
 
 interface SidebarItemProps {
     title: string;
@@ -15,19 +11,12 @@ interface SidebarItemProps {
     icon?: string;
 }
 
-const icons = {
-    home: House,
-    about: CircleUserRound,
-};
-
 export default function SidebarItem({
                                         title,
                                         route,
                                         icon,
                                     }: SidebarItemProps) {
-    const Icon = icon
-        ? icons[icon as keyof typeof icons]
-        : null;
+    const Icon = IconService.get(icon);
 
     return (
         <NavLink

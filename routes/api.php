@@ -11,5 +11,6 @@ Route::prefix('v1')
             Route::get('/me', CurrentUserController::class)->name('me');
         });
         Route::get('/app/bootstrap', AppBootstrapController::class)
+            ->middleware('web')
             ->name('api.app.bootstrap');
     });
