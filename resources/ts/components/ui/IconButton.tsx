@@ -1,7 +1,4 @@
-import {
-    ButtonHTMLAttributes,
-    ReactNode,
-} from 'react';
+import {ButtonHTMLAttributes, ReactNode,} from 'react';
 
 interface IconButtonProps
     extends ButtonHTMLAttributes<HTMLButtonElement> {

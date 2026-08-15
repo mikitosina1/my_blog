@@ -1,8 +1,8 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import {StrictMode} from 'react';
+import {createRoot} from 'react-dom/client';
 
 import App from './App';
-import { getBootstrap } from '@/api/bootstrapApi';
+import {getBootstrap} from '@/api/bootstrapApi';
 import BootstrapService from '@/services/BootstrapService';
 
 import '@/assets/styles/app.scss';
@@ -20,7 +20,7 @@ async function bootstrapApplication() {
 
     createRoot(container).render(
         <StrictMode>
-            <App />
+            <App/>
         </StrictMode>
     );
 }

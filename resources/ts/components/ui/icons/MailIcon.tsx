@@ -3,8 +3,8 @@ interface MailIconProps {
 }
 
 export default function MailIcon({
-                                         size = 24,
-                                     }: MailIconProps) {
+                                     size = 24,
+                                 }: MailIconProps) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1,1 +1,1 @@
-export { default as AppTopbar } from './components/AppTopbar';
+export {default as AppTopbar} from './components/AppTopbar';

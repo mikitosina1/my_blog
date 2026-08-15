@@ -1,7 +1,4 @@
-import {
-    CircleUserRound,
-    House,
-} from 'lucide-react';
+import {CircleUserRound, House,} from 'lucide-react';
 
 export const iconRegistry = {
     home: House,

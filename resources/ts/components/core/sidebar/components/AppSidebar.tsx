@@ -5,14 +5,14 @@ export default function AppSidebar() {
     return (
         <aside className="app-sidebar">
             <header className="app-sidebar__header">
-                <Logo />
+                <Logo/>
             </header>
 
             <nav
                 className="app-sidebar__navigation"
                 aria-label="Main navigation"
             >
-                <Sidebar />
+                <Sidebar/>
             </nav>
 
             <footer className="app-sidebar__footer">

@@ -1,10 +1,4 @@
-import {
-    ReactNode,
-    useEffect,
-    useId,
-    useRef,
-    useState,
-} from 'react';
+import {ReactNode, useEffect, useId, useRef, useState,} from 'react';
 
 interface DropdownProps {
     trigger: ReactNode;

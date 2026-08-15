@@ -1,7 +1,7 @@
-import type { LucideIcon } from 'lucide-react';
+import type {LucideIcon} from 'lucide-react';
 
 import modules from '@/app/generated/modules';
-import { coreIcons } from '@/components/core/icons/coreIcons';
+import {coreIcons} from '@/components/core/icons/coreIcons';
 
 class IconService {
     private readonly icons: Record<string, LucideIcon>;

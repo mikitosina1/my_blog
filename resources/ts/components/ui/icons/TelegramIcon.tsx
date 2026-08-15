@@ -3,8 +3,8 @@ interface TelegramIconProps {
 }
 
 export default function TelegramIcon({
-                                       size = 22,
-                                   }: TelegramIconProps) {
+                                         size = 22,
+                                     }: TelegramIconProps) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

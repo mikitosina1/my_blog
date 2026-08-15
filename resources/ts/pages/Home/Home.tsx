@@ -1,15 +1,12 @@
 import './Home.scss';
 
-import {
-    ArrowRight,
-    ExternalLink,
-} from 'lucide-react';
+import {ArrowRight, ExternalLink,} from 'lucide-react';
 
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import tr from '@/services/TranslationService';
 
-import { technologies } from './technologies';
+import {technologies} from './technologies';
 
 export default function Home() {
     return (
@@ -35,7 +32,7 @@ export default function Home() {
                         >
                             {tr.t('home.actions.about')}
 
-                            <ArrowRight size={18} />
+                            <ArrowRight size={18}/>
                         </Link>
 
                         <a
@@ -46,7 +43,7 @@ export default function Home() {
                         >
                             GitHub
 
-                            <ExternalLink size={16} />
+                            <ExternalLink size={16}/>
                         </a>
                     </div>
                 </div>
@@ -75,7 +72,7 @@ export default function Home() {
                                 className="home-page__technology-card"
                             >
                                 <div className="home-page__technology-icon">
-                                    <Icon size={22} />
+                                    <Icon size={22}/>
                                 </div>
 
                                 <div className="home-page__technology-content">
@@ -124,7 +121,7 @@ export default function Home() {
                     >
                         {tr.t('home.actions.read_more')}
 
-                        <ArrowRight size={17} />
+                        <ArrowRight size={17}/>
                     </Link>
                 </div>
             </section>

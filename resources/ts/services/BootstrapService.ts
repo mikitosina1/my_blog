@@ -1,4 +1,4 @@
-import type { BootstrapData } from '@/types/Bootstrap';
+import type {BootstrapData} from '@/types/Bootstrap';
 
 class BootstrapService {
     private data: BootstrapData | null = null;

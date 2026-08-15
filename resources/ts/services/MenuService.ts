@@ -1,6 +1,6 @@
 import modules from '@/app/generated/modules';
-import type { User } from '@/app/providers/AuthProvider';
-import type { MenuItem } from '@/types/Menu';
+import type {User} from '@/app/providers/AuthProvider';
+import type {MenuItem} from '@/types/Menu';
 
 class MenuService {
 

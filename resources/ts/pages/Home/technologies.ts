@@ -1,9 +1,4 @@
-import {
-    Boxes,
-    Database,
-    Globe,
-    Server,
-} from 'lucide-react';
+import {Boxes, Database, Globe, Server,} from 'lucide-react';
 
 export interface HomeTechnologyGroup {
     key: string;

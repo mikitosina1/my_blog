@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import {createBrowserRouter} from 'react-router-dom';
 
 import AppLayout from '@/layouts/AppLayout';
 
@@ -10,14 +10,14 @@ import modules from './generated/modules';
 const coreRoutes = [
     {
         index: true,
-        element: <Home />,
+        element: <Home/>,
         handle: {
             breadcrumb: 'home.title',
         },
     },
     {
         path: 'about',
-        element: <About />,
+        element: <About/>,
         handle: {
             breadcrumb: 'about.about.title',
         },
@@ -32,7 +32,7 @@ const router = createBrowserRouter(
     [
         {
             path: '/',
-            element: <AppLayout />,
+            element: <AppLayout/>,
             children: [
                 ...coreRoutes,
                 ...moduleRoutes,

@@ -1,12 +1,4 @@
-import {
-    createContext,
-    useCallback,
-    useContext,
-    useEffect,
-    useMemo,
-    useState,
-    type ReactNode,
-} from 'react';
+import {createContext, type ReactNode, useCallback, useContext, useEffect, useMemo, useState,} from 'react';
 
 export interface User {
     id: number;
@@ -97,7 +89,7 @@ export default function AuthProvider({
                 Accept: 'application/json',
                 'X-Requested-With': 'XMLHttpRequest',
                 ...(csrfToken
-                    ? { 'X-CSRF-TOKEN': csrfToken }
+                    ? {'X-CSRF-TOKEN': csrfToken}
                     : {}),
             },
         });

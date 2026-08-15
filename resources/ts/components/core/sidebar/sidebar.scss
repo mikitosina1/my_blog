@@ -60,9 +60,8 @@
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
 
-    transition:
-            background-color var(--transition-fast),
-            color var(--transition-fast);
+    transition: background-color var(--transition-fast),
+    color var(--transition-fast);
 
     &:hover {
         background: var(--color-surface-hover);
@@ -75,9 +74,8 @@
 
     margin-right: var(--space-3);
 
-    transition:
-            color var(--transition-fast),
-            transform var(--transition-fast);
+    transition: color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .sidebar-item__title {

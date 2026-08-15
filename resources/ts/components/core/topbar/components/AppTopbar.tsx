@@ -1,4 +1,4 @@
-import { useMatches } from 'react-router-dom';
+import {useMatches} from 'react-router-dom';
 
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
@@ -32,9 +32,9 @@ export default function AppTopbar() {
             </div>
 
             <div className="app-topbar__right">
-                <LanguageSwitcher />
-                <ThemeSwitcher />
-                <UserMenu />
+                <LanguageSwitcher/>
+                <ThemeSwitcher/>
+                <UserMenu/>
             </div>
         </header>
     );

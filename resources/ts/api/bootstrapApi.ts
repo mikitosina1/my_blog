@@ -1,4 +1,4 @@
-import type { BootstrapData } from '@/types/Bootstrap';
+import type {BootstrapData} from '@/types/Bootstrap';
 
 const BASE_URL = '/api/v1';
 

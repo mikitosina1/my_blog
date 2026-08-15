@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import LogoSvg from '@/components/core/sidebar/components/logo/logo.svg';
 

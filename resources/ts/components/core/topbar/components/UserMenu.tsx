@@ -1,12 +1,8 @@
 import Dropdown from '@/components/ui/Dropdown';
 import IconButton from '@/components/ui/IconButton';
-import { useAuth } from '@/app/providers/AuthProvider';
+import {useAuth} from '@/app/providers/AuthProvider';
 
-import {
-    LogOut,
-    Settings,
-    UserRound,
-} from 'lucide-react';
+import {LogOut, Settings, UserRound,} from 'lucide-react';
 
 import tr from '@/services/TranslationService';
 
@@ -29,7 +25,7 @@ export default function UserMenu() {
             <Dropdown
                 trigger={
                     <IconButton aria-label="User">
-                        <UserRound size={18} />
+                        <UserRound size={18}/>
                     </IconButton>
                 }
             >
@@ -38,7 +34,7 @@ export default function UserMenu() {
                         href="/login"
                         className="user-menu__item"
                     >
-                        <UserRound size={17} />
+                        <UserRound size={17}/>
                         <span>
                             {tr.t('user_cloud.login')}
                         </span>
@@ -48,7 +44,7 @@ export default function UserMenu() {
                         href="/register"
                         className="user-menu__item"
                     >
-                        <UserRound size={17} />
+                        <UserRound size={17}/>
                         <span>
                             {tr.t('user_cloud.register')}
                         </span>
@@ -123,13 +119,13 @@ export default function UserMenu() {
                     </div>
                 </div>
 
-                <div className="user-menu__divider" />
+                <div className="user-menu__divider"/>
 
                 <a
                     href="/profile"
                     className="user-menu__item"
                 >
-                    <UserRound size={17} />
+                    <UserRound size={17}/>
                     <span>
                         {tr.t('user_cloud.profile')}
                     </span>
@@ -139,20 +135,20 @@ export default function UserMenu() {
                     type="button"
                     className="user-menu__item"
                 >
-                    <Settings size={17} />
+                    <Settings size={17}/>
                     <span>
                         {tr.t('user_cloud.settings')}
                     </span>
                 </button>
 
-                <div className="user-menu__divider" />
+                <div className="user-menu__divider"/>
 
                 <button
                     type="button"
                     className="user-menu__item user-menu__item--danger"
                     onClick={() => void handleLogout()}
                 >
-                    <LogOut size={17} />
+                    <LogOut size={17}/>
                     <span>
                         {tr.t('user_cloud.logout')}
                     </span>

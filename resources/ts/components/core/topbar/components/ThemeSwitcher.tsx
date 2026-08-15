@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Moon, Sun } from 'lucide-react';
+import {useEffect, useState} from 'react';
+import {Moon, Sun} from 'lucide-react';
 
 import IconButton from '@/components/ui/IconButton';
 
@@ -59,9 +59,9 @@ export default function ThemeSwitcher() {
             onClick={toggleTheme}
         >
             {isDark ? (
-                <Moon size={18} />
+                <Moon size={18}/>
             ) : (
-                <Sun size={18} />
+                <Sun size={18}/>
             )}
         </IconButton>
     );

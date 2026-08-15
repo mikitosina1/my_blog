@@ -1,6 +1,4 @@
-import {
-    NavLink,
-} from 'react-router-dom';
+import {NavLink,} from 'react-router-dom';
 
 import tr from '@/services/TranslationService';
 import IconService from '@/services/IconService';
@@ -22,7 +20,7 @@ export default function SidebarItem({
         <NavLink
             to={route}
             end={route === '/'}
-            className={({ isActive }) =>
+            className={({isActive}) =>
                 `sidebar-item ${
                     isActive
                         ? 'sidebar-item--active'

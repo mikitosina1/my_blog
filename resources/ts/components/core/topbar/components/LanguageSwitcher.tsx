@@ -1,9 +1,9 @@
 import Dropdown from '@/components/ui/Dropdown';
 import IconButton from '@/components/ui/IconButton';
 
-import { Globe } from 'lucide-react';
+import {Globe} from 'lucide-react';
 
-import { languages } from '@/config/languages';
+import {languages} from '@/config/languages';
 
 export default function LanguageSwitcher() {
     const switchLanguage = (locale: string) => {
@@ -24,7 +24,7 @@ export default function LanguageSwitcher() {
                     aria-label="Language"
                     title="Language"
                 >
-                    <Globe size={18} />
+                    <Globe size={18}/>
                 </IconButton>
             }
         >

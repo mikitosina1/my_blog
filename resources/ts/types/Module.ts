@@ -1,7 +1,7 @@
-import type { LucideIcon } from 'lucide-react';
-import type { RouteObject } from 'react-router-dom';
+import type {LucideIcon} from 'lucide-react';
+import type {RouteObject} from 'react-router-dom';
 
-import type { MenuItem } from './Menu';
+import type {MenuItem} from './Menu';
 
 export interface ReactModule {
     id: string;

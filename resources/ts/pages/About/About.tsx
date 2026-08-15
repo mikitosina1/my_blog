@@ -1,14 +1,6 @@
 import './About.scss';
 
-import {
-    BookOpen,
-    BriefcaseBusiness,
-    Code2,
-    Cpu,
-    Languages,
-    Mail,
-    UserRound,
-} from 'lucide-react';
+import {BookOpen, BriefcaseBusiness, Code2, Cpu, Languages, Mail, UserRound,} from 'lucide-react';
 
 import tr from '@/services/TranslationService';
 
@@ -18,7 +10,7 @@ import TelegramIcon from '@/components/ui/icons/TelegramIcon';
 import MailIcon from '@/components/ui/icons/MailIcon';
 import XingIcon from "@/components/ui/icons/XingIcon";
 
-import { technologies } from './technologies';
+import {technologies} from './technologies';
 
 export default function About() {
     return (
@@ -32,7 +24,7 @@ export default function About() {
                         aria-label="GitHub"
                         className="about-page__social"
                     >
-                        <GithubIcon alt="GitHub" />
+                        <GithubIcon alt="GitHub"/>
                     </a>
 
                     <a
@@ -42,7 +34,7 @@ export default function About() {
                         aria-label="LinkedIn"
                         className="about-page__social"
                     >
-                        <LinkedinIcon alt="LinkedIn" />
+                        <LinkedinIcon alt="LinkedIn"/>
                     </a>
 
                     <a
@@ -52,7 +44,7 @@ export default function About() {
                         aria-label="Xing"
                         className="about-page__social"
                     >
-                        <XingIcon alt="Xing" />
+                        <XingIcon alt="Xing"/>
                     </a>
 
                     <a
@@ -62,7 +54,7 @@ export default function About() {
                         aria-label="Telegram"
                         className="about-page__social"
                     >
-                        <TelegramIcon alt="Telegram" />
+                        <TelegramIcon alt="Telegram"/>
                     </a>
 
                     <a
@@ -70,7 +62,7 @@ export default function About() {
                         aria-label="Email"
                         className="about-page__social"
                     >
-                        <MailIcon alt="Email" />
+                        <MailIcon alt="Email"/>
                     </a>
                 </div>
 
@@ -91,7 +83,7 @@ export default function About() {
 
             <section className="about-page__section">
                 <div className="about-page__section-heading">
-                    <UserRound size={24} />
+                    <UserRound size={24}/>
 
                     <p className="about-page__section-header">
                         {tr.t('about.about.title')}
@@ -111,7 +103,7 @@ export default function About() {
 
             <section className="about-page__section">
                 <div className="about-page__section-heading">
-                    <Code2 size={20} />
+                    <Code2 size={20}/>
 
                     <p className="about-page__section-header">
                         {tr.t('about.technology.title')}
@@ -145,7 +137,7 @@ export default function About() {
 
             <section className="about-page__section">
                 <div className="about-page__section-heading">
-                    <Cpu size={20} />
+                    <Cpu size={20}/>
 
                     <h2>
                         {tr.t('about.approach.title')}
@@ -213,7 +205,7 @@ export default function About() {
 
             <section className="about-page__section">
                 <div className="about-page__section-heading">
-                    <BriefcaseBusiness size={20} />
+                    <BriefcaseBusiness size={20}/>
 
                     <h2>
                         {tr.t('about.work.title')}
@@ -295,7 +287,7 @@ export default function About() {
 
             <section className="about-page__section about-page__section--personal">
                 <div className="about-page__section-heading">
-                    <BookOpen size={20} />
+                    <BookOpen size={20}/>
 
                     <h2>
                         {tr.t('about.outside.title')}
@@ -319,7 +311,7 @@ export default function About() {
 
             <section className="about-page__section">
                 <div className="about-page__section-heading">
-                    <Languages size={20} />
+                    <Languages size={20}/>
 
                     <h2>
                         {tr.t('about.languages.title')}
@@ -371,7 +363,7 @@ export default function About() {
 
             <section className="about-page__contact">
                 <div className="about-page__contact-icon">
-                    <Mail size={22} />
+                    <Mail size={22}/>
                 </div>
 
                 <h2>

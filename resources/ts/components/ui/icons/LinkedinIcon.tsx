@@ -3,8 +3,8 @@ interface LinkedinIconProps {
 }
 
 export default function LinkedinIcon({
-                                       size = 22,
-                                   }: LinkedinIconProps) {
+                                         size = 22,
+                                     }: LinkedinIconProps) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -5,7 +5,7 @@ import {useAuth} from "@/app/providers/AuthProvider";
 
 export default function Sidebar() {
 
-    const { user } = useAuth();
+    const {user} = useAuth();
     const items = MenuService.getMenu(user);
 
     return (
