@@ -7,4 +7,6 @@ export interface MenuItem {
     active?: boolean;
     icon?: string;
     module?: string;
+    requiresAuth?: boolean;
+    roles?: string[];
 }

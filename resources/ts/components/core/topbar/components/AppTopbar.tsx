@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useMatches } from 'react-router-dom';
 
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
@@ -6,27 +6,19 @@ import UserMenu from './UserMenu';
 
 import tr from '@/services/TranslationService';
 
-interface PageInfo {
-    title: string;
+interface RouteHandle {
+    breadcrumb?: string;
 }
 
-const pages: Record<string, PageInfo> = {
-    '/': {
-        title: 'home.title',
-    },
-
-    '/about': {
-        title: 'about.about.title',
-    },
-};
-
 export default function AppTopbar() {
-    const location = useLocation();
+    const matches = useMatches();
 
-    const page = pages[location.pathname];
+    const currentMatch = matches[matches.length - 1];
 
-    const title = page
-        ? tr.t(page.title)
+    const handle = currentMatch.handle as RouteHandle | undefined;
+
+    const title = handle?.breadcrumb
+        ? tr.t(handle.breadcrumb)
         : '';
 
     return (

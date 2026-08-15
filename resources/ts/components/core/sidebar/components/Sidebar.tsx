@@ -1,9 +1,12 @@
 import SidebarItem from './SidebarItem';
 import MenuService from '@/services/MenuService';
 
+import {useAuth} from "@/app/providers/AuthProvider";
+
 export default function Sidebar() {
 
-    const items = MenuService.getMenu();
+    const { user } = useAuth();
+    const items = MenuService.getMenu(user);
 
     return (
         <>
