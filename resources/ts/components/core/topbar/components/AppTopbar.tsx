@@ -7,7 +7,7 @@ import UserMenu from './UserMenu';
 import tr from '@/services/TranslationService';
 
 interface RouteHandle {
-    breadcrumb?: string;
+    title?: string;
 }
 
 export default function AppTopbar() {
@@ -17,8 +17,8 @@ export default function AppTopbar() {
 
     const handle = currentMatch.handle as RouteHandle | undefined;
 
-    const title = handle?.breadcrumb
-        ? tr.t(handle.breadcrumb)
+    const title = handle?.title
+        ? tr.t(handle.title)
         : '';
 
     return (

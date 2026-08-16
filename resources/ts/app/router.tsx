@@ -12,14 +12,14 @@ const coreRoutes = [
         index: true,
         element: <Home/>,
         handle: {
-            breadcrumb: 'home.title',
+            title: 'home.title',
         },
     },
     {
         path: 'about',
         element: <About/>,
         handle: {
-            breadcrumb: 'about.about.title',
+            title: 'about.about.title',
         },
     },
 ];
