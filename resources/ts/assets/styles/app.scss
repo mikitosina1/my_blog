@@ -2,6 +2,10 @@
 @use "variables";
 @use "theme";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*
 |--------------------------------------------------------------------------
 | Global styles
