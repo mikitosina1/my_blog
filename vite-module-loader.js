@@ -1,148 +1,51 @@
 import fs from 'fs/promises';
 import path from 'path';
+import { pathToFileURL } from 'url';
 
 async function collectModuleAssetsPaths(paths, modulesPath) {
-    const rootPath = __dirname;
-    const modulesDirectory = path.join(rootPath, modulesPath);
-    const moduleStatusesPath = path.join(rootPath, 'modules_statuses.json');
+  modulesPath = path.join(__dirname, modulesPath);
 
-    try {
-        const moduleStatusesContent = await fs.readFile(
-            moduleStatusesPath,
-            'utf-8',
-        );
+  const moduleStatusesPath = path.join(__dirname, 'modules_statuses.json');
 
-        const moduleStatuses = JSON.parse(moduleStatusesContent);
-        const moduleDirectories = await fs.readdir(modulesDirectory);
+  try {
+    // Read module_statuses.json
+    const moduleStatusesContent = await fs.readFile(moduleStatusesPath, 'utf-8');
+    const moduleStatuses = JSON.parse(moduleStatusesContent);
 
-        const reactModules = [];
+    // Read module directories
+    const moduleDirectories = await fs.readdir(modulesPath);
 
-        for (const moduleDir of moduleDirectories) {
-            if (moduleDir === '.DS_Store') {
-                continue;
-            }
+    for (const moduleDir of moduleDirectories) {
+      if (moduleDir === '.DS_Store') {
+        // Skip .DS_Store directory
+        continue;
+      }
 
-            if (moduleStatuses[moduleDir] !== true) {
-                continue;
-            }
+      // Check if the module is enabled (status is true)
+      if (moduleStatuses[moduleDir] === true) {
+        const viteConfigPath = path.join(modulesPath, moduleDir, 'vite.config.js');
 
-            const modulePath = path.join(modulesDirectory, moduleDir);
+        try {
+          await fs.access(viteConfigPath);
+          // Convert to a file URL for Windows compatibility
+          const moduleConfigURL = pathToFileURL(viteConfigPath);
 
-            /*
-             * Existing module assets
-             */
-            const viteConfigPath = path.join(
-                modulePath,
-                'vite.config.js',
-            );
+          // Import the module-specific Vite configuration
+          const moduleConfig = await import(moduleConfigURL.href);
 
-            try {
-                const stat = await fs.stat(viteConfigPath);
-
-                if (stat.isFile()) {
-                    const moduleConfig = await import(viteConfigPath);
-
-                    if (
-                        moduleConfig.paths &&
-                        Array.isArray(moduleConfig.paths)
-                    ) {
-                        paths.push(...moduleConfig.paths);
-                    }
-                }
-            } catch {
-                // Module has no Vite asset configuration.
-            }
-
-            /*
-             * React module
-             */
-            const reactEntryPath = path.join(
-                modulePath,
-                'resources',
-                'ts',
-                'index.ts',
-            );
-
-            try {
-                const stat = await fs.stat(reactEntryPath);
-
-                if (stat.isFile()) {
-                    reactModules.push({
-                        name: moduleDir,
-                        path: reactEntryPath,
-                    });
-                }
-            } catch {
-                // Module has no React entry point.
-            }
+          if (moduleConfig.paths && Array.isArray(moduleConfig.paths)) {
+            paths.push(...moduleConfig.paths);
+          }
+        } catch (error) {
+          // vite.config.js does not exist, skip this module
         }
-
-        await generateReactModuleRegistry(reactModules);
-    } catch (error) {
-        console.error(
-            'Error reading module statuses or module configurations:',
-            error,
-        );
+      }
     }
+  } catch (error) {
+    console.error(`Error reading module statuses or module configurations: ${error}`);
+  }
 
-    return paths;
-}
-
-async function generateReactModuleRegistry(modules) {
-    const registryDirectory = path.join(
-        __dirname,
-        'resources',
-        'ts',
-        'app',
-        'generated',
-    );
-
-    const registryPath = path.join(
-        registryDirectory,
-        'modules.ts',
-    );
-
-    await fs.mkdir(registryDirectory, {
-        recursive: true,
-    });
-
-    const imports = modules.map((module, index) => {
-        const relativePath = path
-            .relative(
-                registryDirectory,
-                module.path,
-            )
-            .replace(/\\/g, '/')
-            .replace(/\.ts$/, '');
-
-        const importPath = relativePath.startsWith('.')
-            ? relativePath
-            : `./${relativePath}`;
-
-        return `import module${index} from '${importPath}';`;
-    });
-
-    const moduleList = modules
-        .map((_, index) => `module${index}`)
-        .join(',\n    ');
-
-    const content = `// THIS FILE IS AUTO-GENERATED.
-// DO NOT EDIT MANUALLY.
-
-${imports.join('\n')}
-
-const modules = [
-    ${moduleList}
-];
-
-export default modules;
-`;
-
-    await fs.writeFile(
-        registryPath,
-        content,
-        'utf-8',
-    );
+  return paths;
 }
 
 export default collectModuleAssetsPaths;
