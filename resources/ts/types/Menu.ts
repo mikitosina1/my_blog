@@ -4,7 +4,6 @@ export interface MenuItem {
     route: string;
     section: string;
     order: number;
-    active?: boolean;
     icon?: string;
     module?: string;
     requiresAuth?: boolean;
