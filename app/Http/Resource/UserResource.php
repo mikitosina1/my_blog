@@ -23,7 +23,7 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'role' => $this->role?->title,
             'profile_photo' => $this->profile_photo
-                ? Storage::url('profile_photos/'.$this->profile_photo)
+                ? Storage::disk('public')->url('profile_photos/'.$this->profile_photo)
                 : null,
         ];
     }
