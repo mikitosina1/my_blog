@@ -7,7 +7,17 @@ import BootstrapService from '@/services/BootstrapService';
 
 import '@/assets/styles/app.scss';
 
-const container = document.getElementById('app');
+function getAppContainer(): HTMLElement {
+    const element = document.getElementById('app');
+
+    if (element === null) {
+        throw new Error('Root element #app not found');
+    }
+
+    return element;
+}
+
+const container = getAppContainer();
 
 if (!container) {
     throw new Error('Root element #app not found');
