@@ -18,9 +18,9 @@ Check `composer.json`, `package.json`, and `.ddev/config.yaml` for the authorita
 - Public home and about pages, localization, authentication, verified-user dashboard, and profile management.
 - Versioned API endpoints for the current authenticated user and app bootstrap.
 - Optional modules under `Modules/`:
-  - **MigraineDiary** — attack tracking, dashboards, statistics, dictionaries, and PDF/Excel/email reports.
-  - **SupportChat** — user/admin support rooms, messages, read/delivery state, and translations.
-  - **ModuleManager** — admin controls for listing, enabling, disabling, deleting modules, and configuring module access.
+  - **MigraineDiary** - attack tracking, dashboards, statistics, dictionaries, and PDF/Excel/email reports.
+  - **SupportChat** - user/admin support rooms, messages, read/delivery state, and translations.
+  - **ModuleManager** - admin controls for listing, enabling, disabling, deleting modules, and configuring module access.
 
 Each module has its own README. The module repositories are independent of this application repository; clone the modules you need into `Modules/<ModuleName>` and follow their host-application notes. `TesstModule` is a local example module.
 
@@ -91,7 +91,7 @@ Run project tests with `ddev exec php artisan test`.
 
 ## Repository layout
 
-- `app/`, `routes/`, `resources/`, `database/` — host application.
-- `Modules/` — separate module repositories and the local example module.
-- `.ddev/` — local development environment.
-- `.ai/` — local AI guidance; currently excluded from Git by `.gitignore`.
+- `app/`, `routes/`, `resources/`, `database/` - host application.
+- `Modules/` - separate module repositories and the local example module.
+- `.ddev/` - local development environment.
+- `.ai/` - local AI guidance; currently excluded from Git by `.gitignore`.
